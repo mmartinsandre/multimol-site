@@ -32,6 +32,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import imageOne from "assets/images/banner/432750439_405561108788301_5075291415628301266_n.jpg"
 import imageTwo from "assets/images/banner/427285700_734099785490705_8667246861789682469_n.jpg"
 import imageThree from "assets/images/banner/432750439_405561108788301_5075291415628301266_n.jpg"
+import banner from "assets/images/partners/arenamrv.jpeg"
 import logoIcon from "assets/images/logo.png"
 
 import racionalIcon from "assets/images/partners/racional.svg"
@@ -43,7 +44,7 @@ export default function Home() {
   return (
     <div className="flex h-full w-screen flex-col items-center justify-between">
 
-      <div className="w-screen p-3 flex justify-between items-center bg-transparent absolute top-0 z-10">
+      <div className="w-screen p-3 md:px-6 flex justify-between items-center bg-transparent absolute md:fixed top-0 z-10">
         <Image src={logoIcon} alt="logo" width={80} />
         <DropdownMenu>
           <DropdownMenuTrigger>
@@ -62,6 +63,8 @@ export default function Home() {
         </DropdownMenu>
       </div>
 
+      <Image src={banner} alt="banner" className="hidden w-full object-cover h-[300px] md:block" />
+
       <Carousel
         plugins={[
           Autoplay({
@@ -72,7 +75,7 @@ export default function Home() {
           align: "start",
           loop: true,
         }}
-        className="max-w-screen"
+        className="max-w-screen md:hidden"
       >
         <CarouselContent>
           {[imageOne, imageTwo, imageThree].map((image, index) => (
@@ -82,8 +85,8 @@ export default function Home() {
           ))}
         </CarouselContent>
       </Carousel>
-
-      <div className="px-5 py-16 bg-blue-900 max-w-screen flex flex-col gap-4">
+      
+      <div className="px-5 py-12 bg-blue-900 max-w-screen flex flex-col gap-4">
         <span className="text-white text-xl font-semibold underline decoration-4 underline-offset-4">
           Sobre
         </span>
@@ -95,17 +98,16 @@ export default function Home() {
         </span>
       </div>
 
-      <div className="px-5 pb-2 pt-12 -my-2 bg-gray-600 w-full max-w-screen">
+      <div className="px-5 py-12 bg-gray-600 w-full max-w-screen flex flex-col gap-4">
         <span className="text-white text-xl font-semibold underline decoration-4 underline-offset-4">
           Clientes
         </span>
-      </div>
-
-      <div className="px-5 py-10 bg-gray-600 w-full max-w-screen grid grid-cols-2 gap-4">
-        <Image src={racionalIcon} alt="racional" width={100} height={100} />
-        <Image src={montoIcon} alt="monto" width={100} height={100} />
-        <Image src={leonardiIcon} alt="leonardi" width={100} height={100} />
-        <Image src={mpdIcon} alt="mpd" width={100} height={100} />
+        <div className="py-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+          <Image src={racionalIcon} alt="racional" width={100} height={100} />
+          <Image src={montoIcon} alt="monto" width={100} height={100} />
+          <Image src={leonardiIcon} alt="leonardi" width={100} height={100} />
+          <Image src={mpdIcon} alt="mpd" width={100} height={100} />
+        </div>
       </div>
 
       <div className="px-5 py-12 bg-white w-full max-w-screen flex flex-col gap-8">
@@ -115,58 +117,71 @@ export default function Home() {
         <div className="flex flex-col gap-6 md:flex md:flex-row">
           <Card className="max-w-[400px]">
             <CardHeader className="flex flex-row gap-4">
-              <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-              <CardDescription>@oconstrutor</CardDescription>
+              <CardDescription className="md:text-md">@oconstrutor</CardDescription>
             </CardHeader>
             <CardContent>
               <span>adorei os serviços prestados no galpão de Maringá-PR em 2015!</span>
             </CardContent>
+            <CardFooter>
+              <span className="text-xs md:text-sm font-light text-gray-400">Em 21 Dezembro de 2019 as 18:00 via Instagram</span>
+            </CardFooter>
           </Card>
           <Card className="max-w-[400px]">
             <CardHeader className="flex flex-row gap-4">
-              <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-              <CardDescription>@oconstrutor</CardDescription>
+              <CardDescription className="md:text-md">@oconstrutor</CardDescription>
             </CardHeader>
             <CardContent>
               <span>adorei os serviços prestados no galpão de Maringá-PR em 2015!</span>
             </CardContent>
+            <CardFooter>
+              <span className="text-xs md:text-sm font-light text-gray-400">Em 21 Dezembro de 2019 as 18:00 via Instagram</span>
+            </CardFooter>
           </Card>
           <Card className="max-w-[400px]">
             <CardHeader className="flex flex-row gap-4">
-              <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-              <CardDescription>@oconstrutor</CardDescription>
+              <CardDescription className="md:text-md">@oconstrutor</CardDescription>
             </CardHeader>
             <CardContent>
               <span>adorei os serviços prestados no galpão de Maringá-PR em 2015!</span>
             </CardContent>
+            <CardFooter>
+              <span className="text-xs md:text-sm font-light text-gray-400">Em 21 Dezembro de 2019 as 18:00 via Instagram</span>
+            </CardFooter>
           </Card>
         </div>
       </div>
 
-      <div className="px-5 pt-12 pb-2 bg-blue-200 w-full max-w-screen flex flex-col gap-8">
-        <span className="text-black text-xl font-semibold underline decoration-4 underline-offset-4">
-          Contatos
-        </span>
-        <div className="flex flex-col gap-4">
-          <span>(11) 98141-9676 (Coord. de obras)</span>
-          <span>(11) 98333-0675 (Coord. técnica)</span>
-          <span>adm@multimolconstrucoes.com.br</span>
+      <div className="px-5 py-12 bg-blue-200 w-full max-w-screen flex flex-col md:justify-around md:flex-row gap-8">
+        <div className="flex flex-col gap-8">
+          <span className="text-black text-xl font-semibold underline decoration-4 underline-offset-4">
+            Contatos
+          </span>
+          <div className="flex flex-col gap-2">
+            <span>(11) 98141-9676 (Coord. de obras)</span>
+            <span>(11) 98333-0675 (Coord. técnica)</span>
+            <span>adm@multimolconstrucoes.com.br</span>
+          </div>
+          <span className="md:hidden">Nos siga nas nossas redes sociais:</span>
+          <div className="flex flex-row gap-8 text-3xl -mt-4 md:hidden">
+            <FontAwesomeIcon icon={faFacebook} />
+            <FontAwesomeIcon icon={faInstagram} />
+            <FontAwesomeIcon icon={faLinkedin} />
+          </div>
         </div>
+        <div className="flex-col space-y-4 hidden md:block">
         <span>Nos siga nas nossas redes sociais:</span>
-        <div className="flex flex-row gap-8 text-3xl -mt-4">
-          <FontAwesomeIcon icon={faFacebook} />
-          <FontAwesomeIcon icon={faInstagram} />
-          <FontAwesomeIcon icon={faLinkedin} />
+          <div className="flex flex-row gap-8 text-3xl -mt-4">
+            <FontAwesomeIcon icon={faFacebook} />
+            <FontAwesomeIcon icon={faInstagram} />
+            <FontAwesomeIcon icon={faLinkedin} />
+          </div>
         </div>
+      </div>
+
+      <div className="px-2 py-6 bg-blue-300 w-full max-w-screen flex flex-col gap-8">
+        <span className="text-black text-sm text-center font-light">
+          2024 - Todos os direitos reservados - Multimol Construçes
+        </span>
       </div>
 
     </div>
