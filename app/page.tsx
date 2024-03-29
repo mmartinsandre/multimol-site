@@ -137,7 +137,7 @@ export default function Home() {
         <span className="text-white text-xl font-semibold underline decoration-4 underline-offset-4">
           Clientes
         </span>
-        <div className="py-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+        <div className="py-6 grid grid-cols-2 gap-12 md:grid-cols-3 lg:grid-cols-4">
           <Image src={racionalIcon} alt="racional" width={80} />
           <Image src={montoIcon} alt="monto" width={100} />
           <Image src={leonardiIcon} alt="leonardi" width={120} />
