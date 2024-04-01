@@ -48,11 +48,12 @@ import rioverdeIcon from "assets/images/partners/rioverde.png"
 
 export default function Home() {
   return (
-    <div className="flex h-full w-screen flex-col items-center justify-between">
+    <div className="flex h-full w-screen flex-col items-center justify-between overscroll-y-none">
+
       <div className="w-screen p-3 md:px-6 flex justify-between items-center bg-transparent absolute md:fixed top-0 z-10">
         <Image src={logoIcon} alt="logo" width={80} />
         <DropdownMenu>
-          <DropdownMenuTrigger>
+          <DropdownMenuTrigger className="focus:outline-none">
             <Button variant="ghost" className="text-2xl text-white">
               <FontAwesomeIcon icon={faBars} />
             </Button>
@@ -156,7 +157,7 @@ export default function Home() {
         <span className="text-black text-xl font-semibold underline decoration-4 underline-offset-4">
           Feedbacks
         </span>
-        <div className="flex flex-col gap-6 md:flex md:flex-row">
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
           <Card className="max-w-[400px]">
             <CardHeader className="flex flex-row gap-4">
               <CardDescription className="md:text-md">
@@ -164,7 +165,7 @@ export default function Home() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <span>
+              <span className="text-justify tracking-tighter">
                 adorei os serviços prestados no galpão de Maringá-PR em 2015!
               </span>
             </CardContent>
@@ -181,7 +182,7 @@ export default function Home() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <span>
+              <span className="text-justify tracking-tighter">
                 adorei os serviços prestados no galpão de Maringá-PR em 2015!
               </span>
             </CardContent>
@@ -198,7 +199,24 @@ export default function Home() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <span>
+              <span className="text-justify tracking-tighter">
+                adorei os serviços prestados no galpão de Maringá-PR em 2015!
+              </span>
+            </CardContent>
+            <CardFooter>
+              <span className="text-xs md:text-sm font-light text-gray-400">
+                Em 21 Dezembro de 2019 as 18:00 via Instagram
+              </span>
+            </CardFooter>
+          </Card>
+          <Card className="max-w-[400px]">
+            <CardHeader className="flex flex-row gap-4">
+              <CardDescription className="md:text-md">
+                @oconstrutor
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <span className="text-justify tracking-tighter">
                 adorei os serviços prestados no galpão de Maringá-PR em 2015!
               </span>
             </CardContent>
@@ -249,6 +267,7 @@ export default function Home() {
           2024 - Todos os direitos reservados - Multimol Construçes
         </span>
       </div>
+
     </div>
   );
 }
