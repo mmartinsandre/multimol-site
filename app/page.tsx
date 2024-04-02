@@ -143,7 +143,7 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <span className="italic text-sm text-justify tracking-tighter">
-                "adorei os serviços prestados no galpão de Maringá-PR em 2015!".
+                &quot;adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
               </span>
             </CardContent>
           </Card>
@@ -155,7 +155,7 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <span className="italic text-sm text-justify tracking-tighter">
-                "adorei os serviços prestados no galpão de Maringá-PR em 2015!".
+                &quot;adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
               </span>
             </CardContent>
           </Card>
@@ -167,7 +167,7 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <span className="italic text-sm text-justify tracking-tighter">
-                "adorei os serviços prestados no galpão de Maringá-PR em 2015!".
+                &quot;adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
               </span>
             </CardContent>
           </Card>
@@ -179,7 +179,7 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <span className="italic text-sm text-justify tracking-tighter">
-                "adorei os serviços prestados no galpão de Maringá-PR em 2015!".
+                &quot;adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
               </span>
             </CardContent>
           </Card>
