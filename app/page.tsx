@@ -23,9 +23,10 @@ import {
 import HeaderComponent from "./modules/header";
 import FooterComponent from "./modules/footer";
 
-import imageOne from "./assets/images/banner/432750439_405561108788301_5075291415628301266_n.jpg"
-import imageTwo from "./assets/images/banner/427285700_734099785490705_8667246861789682469_n.jpg"
-import imageThree from "./assets/images/banner/432750439_405561108788301_5075291415628301266_n.jpg"
+import imageOne from "./assets/images/banner/ache_rec.jpeg"
+import imageTwo from "./assets/images/banner/arena_mrv.jpeg"
+import imageThree from "./assets/images/banner/tiete_plaza.jpeg"
+import imageFour from "./assets/images/banner/cidade_jardim.jpeg"
 import banner from "./assets/images/partners/arenamrv.jpeg"
 
 import racionalIcon from "./assets/images/partners/racional.svg"
@@ -54,7 +55,7 @@ export default function Home() {
       <Carousel
         plugins={[
           Autoplay({
-            delay: 3000,
+            delay: 4000,
           }),
         ]}
         opts={{
@@ -64,9 +65,9 @@ export default function Home() {
         className="w-full max-w-screen md:hidden"
       >
         <CarouselContent>
-          {[imageOne, imageTwo, imageThree].map((image, index) => (
+          {[imageOne, imageTwo, imageThree, imageFour].map((image, index) => (
             <CarouselItem key={index}>
-              <Image src={image} alt={`banner ${index + 1}`} className="filter brightness-50 max-h-[200px]" />
+              <Image src={image} alt={`banner ${index + 1}`} className="filter brightness-50" />
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -74,7 +75,7 @@ export default function Home() {
 
       <div
         id="about"
-        className="px-5 py-12 bg-blue-700 max-w-screen flex gap-4 flex-col rounded-t-2xl -my-6 z-10"
+        className="px-5 py-12 bg-blue-700 max-w-screen flex gap-4 flex-col rounded-t-2xl -mb-4 -mt-28 md:-mt-6 z-10"
       >
         <span className="text-white text-xl font-light uppercase text-center md:text-left">
           Nossa

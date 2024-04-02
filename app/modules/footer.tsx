@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 import logoIcon from "../assets/images/non_slogan_logo.png"
 
@@ -71,8 +72,10 @@ const FooterComponent = () => {
                                 </div>
                             </form>
                         </CardContent>
-                        <CardFooter className="flex justify-between">
-                            <Button>Enviar mensagem</Button>
+                        <CardFooter className="justify-center md:justify-start">
+                            <Button variant="secondary" className="gap-2">
+                                <FontAwesomeIcon icon={faPaperPlane} />Enviar mensagem
+                            </Button>
                         </CardFooter>
                     </Card>
                 </div>
