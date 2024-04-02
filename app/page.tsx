@@ -48,7 +48,7 @@ export default function Home() {
       <Image
         src={banner}
         alt="banner"
-        className="hidden w-full object-cover h-[300px] md:block"
+        className="hidden w-full object-cover h-[180px] md:block filter brightness-50"
       />
 
       <Carousel
@@ -66,7 +66,7 @@ export default function Home() {
         <CarouselContent>
           {[imageOne, imageTwo, imageThree].map((image, index) => (
             <CarouselItem key={index}>
-              <Image src={image} alt={`banner ${index + 1}`} />
+              <Image src={image} alt={`banner ${index + 1}`} className="filter brightness-50 max-h-[200px]" />
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -74,26 +74,21 @@ export default function Home() {
 
       <div
         id="about"
-        className="px-5 py-12 bg-blue-900 max-w-screen flex gap-4 flex-col"
+        className="px-5 py-12 bg-blue-700 max-w-screen flex gap-4 flex-col rounded-t-2xl -my-6 z-10"
       >
-        <span className="text-white text-xl font-semibold underline decoration-4 underline-offset-4">
-          Sobre
+        <span className="text-white text-xl font-light uppercase text-center md:text-left">
+          Nossa
         </span>
-        <span className="text-white tracking-tighter md:tracking-tight text left">
-          Há 12 anos presente em diversas obras de extrema importância para o
-          mercado nacional, tanto de iniciativas privadas quanto de interesse
-          público, atuando em edifícios corporativos e residenciais,
-          supermercados, hospitais, farmacêuticas, galpões logísticos,
-          estádios, shoppings, etc. Nosso foco é na excelência em todos os
-          processos do atendimento, desde a captação do cliente até a
-          finalização e entrega dos serviços, buscando a pontualidade no
-          cronograma com todas as providências de documentação e
-          infraestrutura necessários para a execução e fluidez.
+        <span className="text-blue-950 text-xl font-extrabold uppercase text-center md:text-left -mt-5">
+          História
+        </span>
+        <span className="text-blue-200 tracking-tighter md:tracking-widest text-left">
+          Há 12 anos presente em diversas obras de extrema importância para o mercado nacional, atuando em diferentes setores. Nosso foco é na excelência em todos os processos do atendimento, buscando a pontualidade no cronograma e na execução dos serviços.
         </span>
         <div className="flex flex-row justify-end">
           <Button variant="ghost" onClick={() => window.location.href = "/about"} className="md:hidden text-white text-xl">
             <FontAwesomeIcon icon={faPlus} />
-          </Button>
+          </Button> 
           <Button variant="link" onClick={() => window.location.href = "/about"} className="hidden md:block text-white text-md">
             Ver mais
           </Button>
@@ -102,10 +97,13 @@ export default function Home() {
 
       <div
         id="clients"
-        className="px-5 py-12 bg-gray-900 w-full max-w-screen flex flex-col gap-4"
+        className="px-5 py-12 bg-gray-900 w-full max-w-screen flex flex-col gap-4 rounded-b-2xl"
       >
-        <span className="text-white text-xl font-semibold underline decoration-4 underline-offset-4">
-          Clientes
+        <span className="text-white text-xl font-light uppercase text-center md:text-left">
+          Clientes e
+        </span>
+        <span className="text-blue-500 text-xl font-extrabold uppercase text-center md:text-left -mt-5">
+          Parceiros
         </span>
         <div className="py-6 grid grid-cols-2 gap-12 md:grid-cols-3 lg:grid-cols-4">
           <Image src={racionalIcon} alt="racional" width={80} />
@@ -114,8 +112,8 @@ export default function Home() {
           <Image src={mpdIcon} alt="mpd" width={120} />
           <Image src={afonsofrancaIcon} alt="afonsofranca" width={120} />
           <Image src={matecIcon} alt="matec" width={120} />
-          <Image src={ribeirocaramIcon} alt="ribeirocaram" width={90} />
-          <Image src={teaIcon} alt="tea" width={60} />
+          <Image src={ribeirocaramIcon} alt="ribeirocaram" width={90} className="filter brightness-150" />
+          <Image src={teaIcon} alt="tea" width={60} className="contrast-0" />
         </div>
         <div className="flex flex-row justify-end">
           <Button variant="ghost" onClick={() => window.location.href = "/about"} className="md:hidden text-white text-xl">
@@ -131,57 +129,49 @@ export default function Home() {
         id="feedbacks"
         className="px-5 py-12 bg-white w-full max-w-screen flex flex-col gap-8"
       >
-        <span className="text-black text-xl font-semibold underline decoration-4 underline-offset-4">
+        <span className="text-blue-950 text-xl font-extrabold uppercase text-center  md:text-left">
           Feedbacks
         </span>
         <div className="items-center justify-center grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
           <Card className="max-w-[300px]">
-            <CardHeader>
-              <CardDescription className="text-xs md:text-md">
-                Marcos Oliveira
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
+            <CardContent className="pt-5">
               <span className="italic text-sm text-justify tracking-tighter">
-                &quot;adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
+                &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
               </span>
             </CardContent>
+            <CardFooter className="text-xs md:text-md">
+              Marcos Oliveira
+            </CardFooter>
           </Card>
           <Card className="max-w-[300px]">
-            <CardHeader>
-              <CardDescription className="text-xs md:text-md">
-                Marcos Oliveira
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
+            <CardContent className="pt-5">
               <span className="italic text-sm text-justify tracking-tighter">
-                &quot;adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
+                &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
               </span>
             </CardContent>
+            <CardFooter className="text-xs md:text-md">
+              Marcos Oliveira
+            </CardFooter>
           </Card>
           <Card className="max-w-[300px]">
-            <CardHeader>
-              <CardDescription className="text-xs md:text-md">
-                Marcos Oliveira
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
+            <CardContent className="pt-5">
               <span className="italic text-sm text-justify tracking-tighter">
-                &quot;adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
+                &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
               </span>
             </CardContent>
+            <CardFooter className="text-xs md:text-md">
+              Marcos Oliveira
+            </CardFooter>
           </Card>
           <Card className="max-w-[300px]">
-            <CardHeader>
-              <CardDescription className="text-xs md:text-md">
-                Marcos Oliveira
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
+            <CardContent className="pt-5">
               <span className="italic text-sm text-justify tracking-tighter">
-                &quot;adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
+                &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
               </span>
             </CardContent>
+            <CardFooter className="text-xs md:text-md">
+              Marcos Oliveira
+            </CardFooter>
           </Card>
         </div>
       </div>
