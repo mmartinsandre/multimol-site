@@ -83,7 +83,7 @@ export default function Home() {
         <span className="text-blue-950 text-xl font-extrabold uppercase text-center md:text-left -mt-5">
           História
         </span>
-        <span className="text-blue-200 tracking-tighter md:tracking-widest text-left">
+        <span className="text-blue-200 md:tracking-widest text-left">
           Há 12 anos presente em diversas obras de extrema importância para o mercado nacional, atuando em diferentes setores. Nosso foco é na excelência em todos os processos do atendimento, buscando a pontualidade no cronograma e na execução dos serviços.
         </span>
         <div className="flex flex-row justify-end">

@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import Image from "next/image";
 
@@ -32,12 +33,12 @@ const FooterComponent = () => {
             <div className="flex flex-col md:flex-row w-full">
                 <div
                     id="title"
-                    className=" bg-blue-100 w-full flex flex-col md:justify-around rounded-t-2xl md:rounded-tl-2xl p-5 md:rounded-tr-none"
+                    className=" bg-gray-900 w-full flex flex-col pb-5 md:justify-around rounded-t-2xl md:rounded-tl-2xl p-5 md:rounded-tr-none"
                 >
-                    <span className="text-blue-950 text-xl font-extrabold uppercase text-center  md:text-left">
+                    <span className="text-white text-xl font-light uppercase text-center  md:text-left">
                         Solicite
                     </span>
-                    <span className="text-blue-900 text-xl font-light uppercase text-center  md:text-left">
+                    <span className="text-blue-500 text-xl font-extrabold uppercase text-center  md:text-left">
                         Um orçamento
                     </span>
                     <Card className="mt-10">
@@ -80,20 +81,20 @@ const FooterComponent = () => {
                     </Card>
                 </div>
 
-                <div className="flex flex-col w-full p-5 bg-blue-500 md:rounded-tr-2xl">
-                    <span className="text-blue-300 text-xl font-light uppercase text-center  md:text-left">
+                <div className="flex flex-col w-full p-5 bg-blue-700 md:rounded-tr-2xl">
+                    <span className="text-white text-xl font-light uppercase text-center  md:text-left">
                         Entre
                     </span>
                     <span className="text-blue-950 text-xl font-extrabold uppercase text-center  md:text-left">
                         Em contato
                     </span>
-                    <div className="flex flex-col gap-2 items-center mt-10">
+                    <div className="text-blue-200 flex flex-col gap-2 items-center mt-10">
                         <a href="https://api.whatsapp.com/send?phone=5511981419676" className="">Coordenação de obras: (11) 98141-9676 </a>
                         <a href="https://api.whatsapp.com/send?phone=5511983330675" className="">Coordenação técnica: (11) 98333-0675 </a>
                         <a href="mailto:adm@multimolconstrucoes.com.br" className="">E-mail: adm@multimolconstrucoes.com.br</a>
                     </div>
-                    <span className="text-center text-md mt-10">Nos siga nas nossas redes sociais:</span>
-                    <div className="flex flex-row gap-8 text-3xl mt-3 justify-center pb-5 md:pb-0">
+                    <span className="text-blue-200 text-center text-md mt-10">Nos siga nas nossas redes sociais:</span>
+                    <div className="text-blue-200 flex flex-row gap-8 text-3xl mt-3 justify-center pb-5 md:pb-0">
                         <FontAwesomeIcon icon={faFacebook} />
                         <FontAwesomeIcon icon={faInstagram} />
                         <FontAwesomeIcon icon={faLinkedin} />

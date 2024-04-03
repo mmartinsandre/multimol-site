@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import Image from "next/image";
 import logoIcon from "../assets/images/non_slogan_white_logo.png"
