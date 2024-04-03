@@ -98,7 +98,7 @@ export default function Home() {
 
       <div
         id="clients"
-        className="px-5 py-12 bg-gray-900 w-full max-w-screen flex flex-col gap-4 rounded-b-2xl"
+        className="px-5 py-12 bg-gray-900 w-full max-w-screen flex flex-col gap-4"
       >
         <span className="text-white text-xl font-light uppercase text-center md:text-left">
           Clientes e
@@ -128,7 +128,7 @@ export default function Home() {
 
       <div
         id="feedbacks"
-        className="px-5 py-12 bg-white w-full max-w-screen flex flex-col gap-8"
+        className="px-5 py-12 bg-white w-full max-w-screen flex flex-col gap-8 rounded-t-2xl -mt-5"
       >
         <span className="text-blue-950 text-xl font-extrabold uppercase text-center  md:text-left">
           Feedbacks

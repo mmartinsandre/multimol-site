@@ -80,7 +80,7 @@ const FooterComponent = () => {
                     </Card>
                 </div>
 
-                <div className="flex flex-col w-full p-5 bg-blue-500 md:rounded-tr-2xl md:rounded-b-none rounded-b-2xl ">
+                <div className="flex flex-col w-full p-5 bg-blue-500 md:rounded-tr-2xl">
                     <span className="text-blue-300 text-xl font-light uppercase text-center  md:text-left">
                         Entre
                     </span>
@@ -93,7 +93,7 @@ const FooterComponent = () => {
                         <a href="mailto:adm@multimolconstrucoes.com.br" className="">E-mail: adm@multimolconstrucoes.com.br</a>
                     </div>
                     <span className="text-center text-md mt-10">Nos siga nas nossas redes sociais:</span>
-                    <div className="flex flex-row gap-8 text-3xl mt-3 justify-center">
+                    <div className="flex flex-row gap-8 text-3xl mt-3 justify-center pb-5 md:pb-0">
                         <FontAwesomeIcon icon={faFacebook} />
                         <FontAwesomeIcon icon={faInstagram} />
                         <FontAwesomeIcon icon={faLinkedin} />
