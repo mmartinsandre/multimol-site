@@ -159,7 +159,7 @@ export default function Home() {
         id="services"
         className="px-5 py-12 w-full max-w-screen flex flex-col gap-8 -mb-2 md:items-center"
       >
-        <div className="flex flex-col md:flex-row border-2 border-neutral-200 rounded-2xl p-2 md:p-4 md:gap-2 shadow-2xl md:w-1/4 md:justify-center">
+        <div className="flex flex-col md:flex-row border-2 border-neutral-200 rounded-2xl p-2 md:p-4 md:gap-2 shadow-2xl md:w-1/2 md:min-w-2/5 md:justify-center">
           <span className="text-gray-950 text-xl font-light uppercase text-center">
             Serviços e
           </span>
@@ -177,7 +177,7 @@ export default function Home() {
           id="clientsDesktop"
           className="px-5 py-12 bg-gray-900 w-full max-w-screen flex flex-col gap-4 rounded-t-2xl md:items-center"
         >
-          <div className="flex flex-col md:flex-row bg-gray-800 rounded-2xl p-2 md:p-4 gap-4 md:gap-2 shadow-2xl md:w-1/4 md:justify-center">
+          <div className="flex flex-col md:flex-row bg-gray-800 rounded-2xl p-2 md:p-4 gap-4 md:gap-2 shadow-2xl md:w-1/2 md:min-w-2/5 md:justify-center">
             <span className="text-white text-xl font-light uppercase text-left">
               Clientes e
             </span>
@@ -217,7 +217,7 @@ export default function Home() {
         id="feedbacks"
         className="px-5 py-12 bg-white w-full max-w-screen flex flex-col gap-8 rounded-t-2xl -mt-5 md:items-center"
       >
-        <div className="flex flex-col md:flex-row md:gap-2 border-2 border-neutral-200 rounded-2xl p-2 md:p-4 shadow-2xl md:w-1/4 md:justify-center">
+        <div className="flex flex-col md:flex-row md:gap-2 border-2 border-neutral-200 rounded-2xl p-2 md:p-4 shadow-2xl md:w-1/2 md:min-w-2/5 md:justify-center">
           <span className="text-gray-950 text-xl font-light uppercase text-center  md:text-left">
             Avaliações
           </span>
