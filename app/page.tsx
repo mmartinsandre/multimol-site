@@ -3,8 +3,8 @@ import * as React from "react";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -14,10 +14,7 @@ import {
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card"
 import {
   Drawer,
@@ -44,12 +41,11 @@ import mpdIcon from "./assets/images/partners/mpd.svg"
 import teaIcon from "./assets/images/partners/tea.svg"
 import montoIcon from "./assets/images/partners/monto.png"
 import leonardiIcon from "./assets/images/partners/leonardi.png"
-import bemarcoIcon from "./assets/images/partners/bemarco.png"
 import afonsofrancaIcon from "./assets/images/partners/afonsofranca.png"
 import matecIcon from "./assets/images/partners/matec.png"
 import ribeirocaramIcon from "./assets/images/partners/ribeirocaram.png"
-import rioverdeIcon from "./assets/images/partners/rioverde.png"
 import Slider from "./modules/partners";
+import { ResizableDemo } from "./modules/resizable";
 
 export default function Home() {
 
@@ -72,6 +68,13 @@ export default function Home() {
 
   return (
     <div className="flex h-full w-full max-w-screen flex-col items-center justify-between overscroll-y-none">
+
+      <Button 
+        className="rounded-full py-8 bg-green-600 fixed z-40 bottom-5 right-5 text-4xl hover:bg-green-800 animate-bounce" 
+        onClick={() => window.location.href = 'https://api.whatsapp.com/send?phone=5511981419676&text=Ol%C3%A1%2C%20desejo%20conhecer%20melhor%20os%20servi%C3%A7os%20da%20Multimol'}
+      >
+        <FontAwesomeIcon icon={faWhatsapp} />
+      </Button>
 
       <HeaderComponent />
 
@@ -104,25 +107,25 @@ export default function Home() {
 
       <div
         id="about"
-        className="px-5 py-8 bg-blue-700 max-w-screen flex gap-4 flex-row w-full justify-between md:flex-col rounded-t-2xl -mb-4 -mt-28 md:-mt-6 z-10"
+        className="px-5 pt-6 pb-4 shadow-neutral-900 md:py-5 bg-gray-900 max-w-screen flex md:gap-4 w-full justify-between flex-col rounded-t-2xl rounded-b-2xl -mt-28 md:-mt-6 z-10 shadow-2xl"
       >
-        <div className="flex flex-col gap-4 text-left items-start">
+        <div className="flex flex-col gap-4 p-2 md:p-4">
           <span className="text-white text-xl font-light uppercase text-center md:text-left">
             Nossa
           </span>
-          <span className="text-blue-950 text-xl font-extrabold uppercase text-center md:text-left -mt-5">
+          <span className="text-blue-500 text-xl font-extrabold uppercase text-center md:text-left -mt-5">
             História
           </span>
         </div>
-        <span className="text-blue-200 md:tracking-widest text-left hidden md:block">
+        <span className="text-blue-200 md:tracking-widest text-justify hidden md:block max-w-[650px]">
           Há 12 anos presente em diversas obras de extrema importância para o mercado nacional, atuando em diferentes setores. Nosso foco é na excelência em todos os processos do atendimento, buscando a pontualidade no cronograma e na execução dos serviços.
         </span>
-        <div className="flex flex-row justify-end">
+        <div className="flex flex-row justify-center md:justify-end">
           <Drawer>
             <DrawerTrigger asChild>
               <div>
-                <Button variant="ghost" className="md:hidden text-white text-xl">
-                  <FontAwesomeIcon icon={faPlus} />
+                <Button variant="ghost" className="md:hidden text-white text-xl animate-pulse">
+                  <FontAwesomeIcon icon={faChevronDown} />
                 </Button>
                 <Button variant="link" className="hidden md:block text-white text-md">
                   Ver mais
@@ -151,18 +154,37 @@ export default function Home() {
           </Drawer>
         </div>
       </div>
+
+      <div
+        id="services"
+        className="px-5 py-12 w-full max-w-screen flex flex-col gap-8 -mb-2"
+      >
+        <div className="flex flex-col border-2 border-neutral-200 rounded-2xl p-2 md:p-4 shadow-2xl">
+          <span className="text-gray-950 text-xl font-light uppercase text-center  md:text-left">
+            Serviços e
+          </span>
+          <span className="text-blue-500 text-xl font-extrabold uppercase text-center  md:text-left">
+            Procedimentos
+          </span>
+        </div>
+        <div className="items-center w-full justify-center flex flex-row">
+          <ResizableDemo />
+        </div>
+      </div>
       
       <div className="hidden md:block w-full">
         <div
           id="clientsDesktop"
-          className="px-5 py-12 bg-gray-900 w-full max-w-screen flex flex-col gap-4"
+          className="px-5 py-12 bg-gray-900 w-full max-w-screen flex flex-col gap-4 rounded-t-2xl "
         >
-          <span className="text-white text-xl font-light uppercase text-left">
-            Clientes e
-          </span>
-          <span className="text-blue-500 text-xl font-extrabold uppercase text-left -mt-5">
-            Parceiros
-          </span>
+          <div className="flex flex-col bg-gray-800 rounded-2xl p-2 md:p-4 gap-4 shadow-2xl">
+            <span className="text-white text-xl font-light uppercase text-left">
+              Clientes e
+            </span>
+            <span className="text-blue-500 text-xl font-extrabold uppercase text-left -mt-5">
+              Parceiros
+            </span>
+          </div>
           <div className="py-6 grid gap-12 grid-cols-4">
             <Image src={racionalIcon} alt="racional" width={80} />
             <Image src={montoIcon} alt="monto" width={100} />
@@ -173,28 +195,25 @@ export default function Home() {
             <Image src={ribeirocaramIcon} alt="ribeirocaram" width={90} className="filter brightness-150" />
             <Image src={teaIcon} alt="tea" width={60} className="contrast-0" />
           </div>
-          <div className="flex flex-row justify-end">
-            <Button variant="link" onClick={() => window.location.href = "/about"} className="text-white text-md">
-              Ver mais
-            </Button>
-          </div>
         </div>
       </div>
 
       <div
         id="clientsMobile"
-        className="px-5 py-12 bg-gray-900 w-full max-w-screen flex flex-col gap-4 md:hidden"
+        className="px-5 py-12 bg-gray-900 w-full max-w-screen flex flex-col gap-4 md:hidden rounded-t-2xl"
       >
-        <span className="text-white text-xl font-light uppercase text-center">
-          Clientes e
-        </span>
-        <span className="text-blue-500 text-xl font-extrabold uppercase text-center -mt-5">
-          Parceiros
-        </span>
+        <div className="flex flex-col bg-gray-800 rounded-2xl p-2 md:p-4 gap-4 shadow-2xl">
+          <span className="text-white text-xl font-light uppercase text-center">
+            Clientes e
+          </span>
+          <span className="text-blue-500 text-xl font-extrabold uppercase text-center -mt-5">
+            Parceiros
+          </span>
+        </div>
         <Slider />
         <div className="flex flex-row justify-end">
           <Button variant="ghost" onClick={() => window.location.href = "/about"} className="text-white text-xl">
-            <FontAwesomeIcon icon={faPlus} />
+            <FontAwesomeIcon icon={faChevronDown} />
           </Button>
         </div>
       </div>
@@ -203,11 +222,16 @@ export default function Home() {
         id="feedbacks"
         className="px-5 py-12 bg-white w-full max-w-screen flex flex-col gap-8 rounded-t-2xl -mt-5"
       >
-        <span className="text-blue-950 text-xl font-extrabold uppercase text-center  md:text-left">
-          Feedbacks
-        </span>
+        <div className="flex flex-col border-2 border-neutral-200 rounded-2xl p-2 md:p-4 shadow-2xl">
+          <span className="text-gray-950 text-xl font-light uppercase text-center  md:text-left">
+            Avaliações
+          </span>
+          <span className="text-blue-500 text-xl font-extrabold uppercase text-center  md:text-left">
+            Dos clientes
+          </span>
+        </div>
         <div className="items-center justify-center grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
-          <Card className="max-w-[300px]">
+          <Card className="max-w-[300px] shadow-2xl">
             <CardContent className="pt-5">
               <span className="italic text-sm text-justify tracking-tighter">
                 &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
@@ -217,7 +241,7 @@ export default function Home() {
               Marcos Oliveira
             </CardFooter>
           </Card>
-          <Card className="max-w-[300px]">
+          <Card className="max-w-[300px] shadow-2xl">
             <CardContent className="pt-5">
               <span className="italic text-sm text-justify tracking-tighter">
                 &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
@@ -227,7 +251,7 @@ export default function Home() {
               Marcos Oliveira
             </CardFooter>
           </Card>
-          <Card className="max-w-[300px]">
+          <Card className="max-w-[300px] shadow-2xl">
             <CardContent className="pt-5">
               <span className="italic text-sm text-justify tracking-tighter">
                 &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
@@ -237,7 +261,7 @@ export default function Home() {
               Marcos Oliveira
             </CardFooter>
           </Card>
-          <Card className="max-w-[300px]">
+          <Card className="max-w-[300px] shadow-2xl">
             <CardContent className="pt-5">
               <span className="italic text-sm text-justify tracking-tighter">
                 &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.

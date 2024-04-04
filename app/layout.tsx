@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="max-w-screen">
+    <html lang="en" className="max-w-screen w-full">
       <body className={inter.className}>{children}</body>
     </html>
   );
