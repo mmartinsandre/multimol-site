@@ -17,13 +17,15 @@ const FooterComponent = () => {
         <div className="relative bottom-0 w-full">
             <div className="flex flex-col md:flex-row w-full">
 
-                <div className="flex flex-col w-full p-5 bg-gray-900 rounded-t-2xl shadow-2xl">
-                    <span className="text-white text-xl font-light uppercase text-center">
-                        Entre
-                    </span>
-                    <span className="text-blue-500 text-xl font-extrabold uppercase text-center">
-                        Em contato
-                    </span>
+                <div className="flex flex-col w-full p-5 bg-gray-900 rounded-t-2xl shadow-2xl md:items-center">
+                    <div className="flex flex-col md:flex-row md:gap-2 bg-gray-800 rounded-2xl p-2 md:p-4 shadow-2xl md:w-1/4 md:justify-center mt-8">
+                        <span className="text-white text-xl font-light uppercase text-center">
+                            Entre
+                        </span>
+                        <span className="text-blue-500 text-xl font-extrabold uppercase text-center">
+                            Em contato
+                        </span>
+                    </div>
                     <div className="text-white flex flex-col gap-2 items-center mt-10">
                         <a href="https://api.whatsapp.com/send?phone=5511981419676" className="">Coordenação de obras: (11) 98141-9676 </a>
                         <a href="https://api.whatsapp.com/send?phone=5511983330675" className="">Coordenação técnica: (11) 98333-0675 </a>

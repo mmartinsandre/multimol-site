@@ -107,17 +107,17 @@ export default function Home() {
 
       <div
         id="about"
-        className="px-5 pt-6 pb-4 shadow-neutral-900 md:py-5 bg-gray-900 max-w-screen flex md:gap-4 w-full justify-between flex-col rounded-t-2xl rounded-b-2xl -mt-28 md:-mt-6 z-10 shadow-2xl"
+        className="px-5 pt-6 pb-4 shadow-neutral-900 md:py-5 bg-gray-900 max-w-screen flex md:gap-4 w-full justify-between flex-col rounded-t-2xl rounded-b-2xl -mt-28 md:-mt-6 z-10 shadow-2xl md:items-center"
       >
-        <div className="flex flex-col gap-4 p-2 md:p-4">
+        <div className="flex flex-col md:flex-row md:gap-2 p-2 md:pt-6 md:p-0">
           <span className="text-white text-xl font-light uppercase text-center md:text-left">
             Nossa
           </span>
-          <span className="text-blue-500 text-xl font-extrabold uppercase text-center md:text-left -mt-5">
+          <span className="text-blue-500 text-xl font-extrabold uppercase text-center md:text-left">
             História
           </span>
         </div>
-        <span className="text-blue-200 md:tracking-widest text-justify hidden md:block max-w-[650px]">
+        <span className="text-blue-200 md:tracking-wide text-justify hidden md:block w-1/3">
           Há 12 anos presente em diversas obras de extrema importância para o mercado nacional, atuando em diferentes setores. Nosso foco é na excelência em todos os processos do atendimento, buscando a pontualidade no cronograma e na execução dos serviços.
         </span>
         <div className="flex flex-row justify-center md:justify-end">
@@ -133,7 +133,7 @@ export default function Home() {
               </div>
             </DrawerTrigger>
             <DrawerContent>
-              <div className="mx-auto w-full max-w-sm">
+              <div className="mx-auto w-full md:mx-none">
                 <DrawerHeader>
                   <DrawerTitle>
                     <span className="md:hidden">Sobre a Multimol</span>
@@ -144,7 +144,7 @@ export default function Home() {
                   <span className="text-justify tracking-tighter md:hidden">{aboutText}</span>
                   <div className="hidden md:block">{aboutTextDesktop}</div>
                 </div>
-                <DrawerFooter>
+                <DrawerFooter className="items-center">
                   <DrawerClose asChild>
                     <Button variant="outline">Fechar</Button>
                   </DrawerClose>
@@ -157,13 +157,13 @@ export default function Home() {
 
       <div
         id="services"
-        className="px-5 py-12 w-full max-w-screen flex flex-col gap-8 -mb-2"
+        className="px-5 py-12 w-full max-w-screen flex flex-col gap-8 -mb-2 md:items-center"
       >
-        <div className="flex flex-col border-2 border-neutral-200 rounded-2xl p-2 md:p-4 shadow-2xl">
-          <span className="text-gray-950 text-xl font-light uppercase text-center  md:text-left">
+        <div className="flex flex-col md:flex-row border-2 border-neutral-200 rounded-2xl p-2 md:p-4 md:gap-2 shadow-2xl md:w-1/4 md:justify-center">
+          <span className="text-gray-950 text-xl font-light uppercase text-center">
             Serviços e
           </span>
-          <span className="text-blue-500 text-xl font-extrabold uppercase text-center  md:text-left">
+          <span className="text-blue-500 text-xl font-extrabold uppercase text-center">
             Procedimentos
           </span>
         </div>
@@ -175,13 +175,13 @@ export default function Home() {
       <div className="hidden md:block w-full">
         <div
           id="clientsDesktop"
-          className="px-5 py-12 bg-gray-900 w-full max-w-screen flex flex-col gap-4 rounded-t-2xl "
+          className="px-5 py-12 bg-gray-900 w-full max-w-screen flex flex-col gap-4 rounded-t-2xl md:items-center"
         >
-          <div className="flex flex-col bg-gray-800 rounded-2xl p-2 md:p-4 gap-4 shadow-2xl">
+          <div className="flex flex-col md:flex-row bg-gray-800 rounded-2xl p-2 md:p-4 gap-4 md:gap-2 shadow-2xl md:w-1/4 md:justify-center">
             <span className="text-white text-xl font-light uppercase text-left">
               Clientes e
             </span>
-            <span className="text-blue-500 text-xl font-extrabold uppercase text-left -mt-5">
+            <span className="text-blue-500 text-xl font-extrabold uppercase text-left">
               Parceiros
             </span>
           </div>
@@ -200,7 +200,7 @@ export default function Home() {
 
       <div
         id="clientsMobile"
-        className="px-5 py-12 bg-gray-900 w-full max-w-screen flex flex-col gap-4 md:hidden rounded-t-2xl"
+        className="px-5 pt-12 pb-20 bg-gray-900 w-full max-w-screen flex flex-col gap-4 md:hidden rounded-t-2xl"
       >
         <div className="flex flex-col bg-gray-800 rounded-2xl p-2 md:p-4 gap-4 shadow-2xl">
           <span className="text-white text-xl font-light uppercase text-center">
@@ -211,18 +211,13 @@ export default function Home() {
           </span>
         </div>
         <Slider />
-        <div className="flex flex-row justify-end">
-          <Button variant="ghost" onClick={() => window.location.href = "/about"} className="text-white text-xl">
-            <FontAwesomeIcon icon={faChevronDown} />
-          </Button>
-        </div>
       </div>
 
       <div
         id="feedbacks"
-        className="px-5 py-12 bg-white w-full max-w-screen flex flex-col gap-8 rounded-t-2xl -mt-5"
+        className="px-5 py-12 bg-white w-full max-w-screen flex flex-col gap-8 rounded-t-2xl -mt-5 md:items-center"
       >
-        <div className="flex flex-col border-2 border-neutral-200 rounded-2xl p-2 md:p-4 shadow-2xl">
+        <div className="flex flex-col md:flex-row md:gap-2 border-2 border-neutral-200 rounded-2xl p-2 md:p-4 shadow-2xl md:w-1/4 md:justify-center">
           <span className="text-gray-950 text-xl font-light uppercase text-center  md:text-left">
             Avaliações
           </span>
