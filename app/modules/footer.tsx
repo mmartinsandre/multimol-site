@@ -1,6 +1,5 @@
 'use client'
 import React from "react";
-import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -10,7 +9,7 @@ const FooterComponent = () => {
         <div className="relative bottom-0 w-full">
             <div className="flex flex-col md:flex-row w-full">
 
-                <div className="flex flex-col w-full p-5 bg-blue-950 rounded-t-2xl shadow-2xl md:items-center">
+                <div className="flex flex-col w-full p-5 bg-blue-950 rounded-2xl md:items-center">
                     <div className="flex flex-col md:flex-row md:gap-2 bg-blue-900 rounded-2xl p-2 md:p-4 shadow-2xl md:w-1/2 md:min-w-2/5 md:justify-center mt-8">
                         <span className="text-white text-xl font-light uppercase text-center">
                             Entre

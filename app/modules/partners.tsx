@@ -13,7 +13,6 @@ import matecIcon from "../assets/images/partners/matec.png"
 import ribeirocaramIcon from "../assets/images/partners/ribeirocaram.png"
 import rioverdeIcon from "../assets/images/partners/rioverde.png"
 
-// Define the array of slides with images
 const slides = [
     racionalIcon,
     mpdIcon,
@@ -28,16 +27,14 @@ const slides = [
 ];
 
 const Slider = () => {
-    // Duplicate the slides array to ensure seamless looping
     const duplicatedSlides = [...slides, ...slides];
 
     return (
         <div className="relative w-full overflow-hidden mt-8">
-            {/* Wrapping div for seamless looping */}
             <motion.div
                 className="flex"
                 animate={{
-                    x: ['0%', '-380%'],
+                    x: ['0%', '-400%'],
                     transition: {
                         ease: 'linear',
                         duration: 10,
@@ -45,9 +42,8 @@ const Slider = () => {
                     }
                 }}
             >
-                {/* Render duplicated slides with images */}
                 {duplicatedSlides.map((slide, index) => (
-                    <div key={index} className="flex-shrink-0" style={{ width: `${380 / slides.length}%` }}>
+                    <div key={index} className="flex-shrink-0" style={{ width: `${400 / slides.length}%` }}>
                         <div className="flex flex-col items-center justify-center h-full mx-6">
                         <Image src={slide} alt={`partner-${index}`} className="invert grayscale contrast-50" />
                         </div>
