@@ -40,6 +40,10 @@ import shopBandeiraPic from "./assets/images/banner/shop_bandeira.jpeg";
 import shopUniaoPic from "./assets/images/banner/shop_uniao.jpeg";
 import tietePlazaPic from "./assets/images/banner/tiete_plaza.jpeg";
 
+import workOnePic from "./assets/images/progress/workone.jpg"
+import workTwoPic from "./assets/images/progress/worktwo.jpg"
+import workThreePic from "./assets/images/progress/workthree.jpg"
+import workFourPic from "./assets/images/progress/workfour.jpg"
 
 import racionalIcon from "./assets/images/partners/racional.svg"
 import mpdIcon from "./assets/images/partners/mpd.svg"
@@ -50,7 +54,6 @@ import afonsofrancaIcon from "./assets/images/partners/afonsofranca.png"
 import matecIcon from "./assets/images/partners/matec.png"
 import ribeirocaramIcon from "./assets/images/partners/ribeirocaram.png"
 import Slider from "./modules/partners";
-import { ResizableDemo } from "./modules/resizable";
 
 export default function Home() {
 
@@ -84,6 +87,12 @@ export default function Home() {
     { src: tietePlazaPic, alt: 'Tietê Plaza' }
   ];
 
+  const progressPics = [
+    { src: workOnePic, alt: 'work' },
+    { src: workTwoPic, alt: 'work' },
+    { src: workThreePic, alt: 'work' },
+    { src: workFourPic, alt: 'work' }
+  ]
 
   return (
     <div className="flex h-full w-full max-w-screen flex-col items-center justify-between overscroll-y-none pt-16 md:pt-16">
@@ -131,7 +140,7 @@ export default function Home() {
         className="px-5 pt-6 pb-4 md:py-5 bg-white border-t-4 border-neutral-100 max-w-screen flex md:gap-4 w-full justify-between flex-col rounded-t-2xl -mt-20 md:-mt-6 z-10 md:items-center"
       >
         <div className="flex flex-col md:flex-row md:gap-2 md:pt-6 md:p-0 items-center">
-          <div className="h-2 bg-neutral-100 w-1/3 mb-5 rounded-full"></div>
+          <div className="h-2 bg-neutral-100 w-1/3 mb-5 rounded-full flex flex-row"></div>
           <span className="text-blue-950 text-xl font-light uppercase text-center md:text-left">
             Nossa
           </span>
@@ -142,10 +151,10 @@ export default function Home() {
         <span className="text-blue-950 md:tracking-wide text-justify hidden md:block w-1/3">
           Há 12 anos presente em diversas obras de extrema importância para o mercado nacional, atuando em diferentes setores. Nosso foco é na excelência em todos os processos do atendimento, buscando a pontualidade no cronograma e na execução dos serviços.
         </span>
-        <div className="flex flex-row justify-center md:justify-end">
+        <div className="flex flex-row justify-center md:justify-end py-4">
           <Drawer>
             <DrawerTrigger asChild>
-              <Button variant="link" className="text-neutral-400 text-md animate-pulse">
+              <Button variant="link" className="text-neutral-400 text-md animate-pulse font-light tracking-tighter underline">
                 Ler artigo completo
               </Button>
             </DrawerTrigger>
@@ -174,7 +183,7 @@ export default function Home() {
 
       <div
         id="services"
-        className="px-5 py-12 w-full max-w-screen flex flex-col gap-8 -mb-2 md:items-center"
+        className="px-5 py-2 w-full max-w-screen flex flex-col gap-8 -mb-2 md:items-center"
       >
         <div className="flex flex-col md:flex-row border-t-2 border-neutral-100 p-2 md:p-4 md:gap-2 md:w-1/2 md:min-w-2/5 md:justify-center">
           <span className="text-gray-950 text-xl font-light uppercase text-center">
@@ -184,8 +193,31 @@ export default function Home() {
             Procedimentos
           </span>
         </div>
-        <div className="items-center w-full justify-center flex flex-row">
-          <ResizableDemo />
+        <span className="text-neutral-400 w-full items-center justify-center font-light text-center tracking-tighter">Alguns dos nossos serviços:</span>
+        <div className="flex flex-col md:flex-row gap-8 w-full items-center justify-center">
+          <div className="flex flex-col">
+            <span className="text-lg font-semibold tracking-tighter text-blue-800">Tratamento de concreto pré-moldados:</span>
+            <span className="font-light tracking-tighter text-blue-950">• Equalização de lajes alveolares e pontiamento</span>
+            <span className="font-light tracking-tighter text-blue-950">• Abertura e/ou regularização de fundos e frisos de lajes</span>
+            <span className="font-light tracking-tighter text-blue-950">• Lixamento manual e/ou mecânico</span>
+            <span className="font-light tracking-tighter text-blue-950">• Acabamentos não estruturais em quebrados com massa</span>
+            <span className="font-light tracking-tighter text-blue-950">• Impermeabilização</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-lg font-semibold tracking-tighter text-blue-800">Tratamento de juntas de dilatação e frisos técnicos:</span>
+            <span className="font-light tracking-tighter text-blue-950">• Aberturas</span>
+            <span className="font-light tracking-tighter text-blue-950">• Ajuste e/ou alinhamento</span>
+            <span className="font-light tracking-tighter text-blue-950">• Fechamentos</span>
+            <span className="font-light tracking-tighter text-blue-950">• Impermeabilização</span>
+            <span className="font-light tracking-tighter text-blue-950">• Vedação "com estética" com selante comum e firestop</span>
+          </div>
+        </div>
+        <div className="items-center w-full justify-center flex flex-row py-24 -px-5">
+          <div className="w-full grid grid-cols-1 md:grid-cols-4">
+            {progressPics.map((image, index) => (
+              <Image key={index} src={image.src} alt={image.alt} className="object-cover h-full w-full rounded-2xl p-2" />
+            ))}
+          </div>
         </div>
       </div>
 
