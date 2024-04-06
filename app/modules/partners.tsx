@@ -30,7 +30,7 @@ const Slider = () => {
     const duplicatedSlides = [...slides, ...slides];
 
     return (
-        <div className="relative w-full overflow-hidden mt-8">
+        <div className="relative mt-8 w-full overflow-hidden">
             <motion.div
                 className="flex"
                 animate={{
@@ -43,9 +43,9 @@ const Slider = () => {
                 }}
             >
                 {duplicatedSlides.map((slide, index) => (
-                    <div key={index} className="flex-shrink-0" style={{ width: `${400 / slides.length}%` }}>
-                        <div className="flex flex-col items-center justify-center h-full mx-6">
-                        <Image src={slide} alt={`partner-${index}`} className="invert grayscale contrast-50" />
+                    <div key={index} className="shrink-0" style={{ width: `${400 / slides.length}%` }}>
+                        <div className="mx-6 flex h-full flex-col items-center justify-center">
+                        <Image src={slide} alt={`partner-${index}`} className="contrast-50 grayscale invert" />
                         </div>
                     </div>
                 ))}

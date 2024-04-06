@@ -6,10 +6,10 @@ import letteringIcon from "../assets/images/lettering.png"
 
 const HeaderComponent = () => {
   return (
-      <div className="w-full max-w-screen h-[70px] md:h-[90px] mx-auto flex justify-between items-center absolute top-0 z-20 gradient-radial bg-white rounded-b-2xl border-b-4 border-neutral-100">
-        <div className="w-full items-center justify-start flex -space-x-5 md:-space-x-6">
+      <div className="max-w-screen gradient-radial absolute top-0 z-20 mx-auto flex h-[70px] w-full items-center justify-between rounded-b-2xl border-b-4 border-neutral-100 bg-white md:h-[90px]">
+        <div className="flex w-full items-center justify-start -space-x-5 md:-space-x-6">
           <Image src={logoIcon} alt="logo" className="w-[70px] md:w-[90px]" />
-          <Image src={letteringIcon} alt="desc" className="object-cover h-16 w-48" />
+          <Image src={letteringIcon} alt="desc" className="h-16 w-48 object-cover" />
         </div>
       </div>
   );

@@ -95,10 +95,10 @@ export default function Home() {
   ]
 
   return (
-    <div className="flex h-full w-full max-w-screen flex-col items-center justify-between overscroll-y-none pt-[60px] md:pt-16">
+    <div className="max-w-screen flex size-full flex-col items-center justify-between overscroll-y-none pt-[60px] md:pt-16">
 
       <Button
-        className="rounded-full py-8 bg-green-600 fixed z-40 bottom-5 right-5 text-4xl hover:bg-green-800 animate-bounce"
+        className="fixed bottom-5 right-5 z-40 animate-bounce rounded-full bg-green-600 py-8 text-4xl hover:bg-green-800"
         onClick={() => window.location.href = 'https://api.whatsapp.com/send?phone=5511981419676&text=Ol%C3%A1%2C%20desejo%20conhecer%20melhor%20os%20servi%C3%A7os%20da%20Multimol'}
       >
         <FontAwesomeIcon icon={faWhatsapp} />
@@ -107,9 +107,9 @@ export default function Home() {
       <HeaderComponent />
 
       <div id="mosaic" className="hidden md:block">
-        <div className="w-full grid grid-cols-5">
+        <div className="grid w-full grid-cols-5">
           {constructionPics.map((image, index) => (
-            <Image key={index} src={image.src} alt={image.alt} className="object-cover h-full w-full" />
+            <Image key={index} src={image.src} alt={image.alt} className="size-full object-cover" />
           ))}
         </div>
       </div>
@@ -124,12 +124,12 @@ export default function Home() {
           align: "start",
           loop: true,
         }}
-        className="w-full max-w-screen md:hidden"
+        className="max-w-screen w-full md:hidden"
       >
         <CarouselContent>
           {constructionPics.map((image, index) => (
             <CarouselItem key={index}>
-              <Image src={image.src} alt={`banner ${index + 1}`} className="h-full w-full" />
+              <Image src={image.src} alt={`banner ${index + 1}`} className="size-full" />
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -137,29 +137,29 @@ export default function Home() {
 
       <div
         id="about"
-        className="p-5 bg-white border-t-4 border-neutral-100 max-w-screen flex md:gap-4 w-full justify-between flex-col rounded-t-2xl -mt-3 z-10 md:items-center"
+        className="max-w-screen z-10 -mt-3 flex w-full flex-col justify-between rounded-t-2xl border-t-4 border-neutral-100 bg-white p-5 md:items-center md:gap-4"
       >
-        <div className="flex flex-col md:flex-row md:gap-2 md:pt-6 md:p-0 items-center">
-          <div className="h-2 bg-neutral-100 w-1/3 mb-5 rounded-full flex flex-row"></div>
-          <span className="text-blue-950 text-xl font-light uppercase text-center md:text-left">
+        <div className="flex flex-col items-center md:flex-row md:gap-2 md:p-0 md:pt-6">
+          <div className="mb-5 flex h-2 w-1/3 flex-row rounded-full bg-neutral-100"></div>
+          <span className="text-center text-xl font-light uppercase text-blue-950 md:text-left">
             Nossa
           </span>
-          <span className="text-blue-800 text-xl font-extrabold uppercase text-center md:text-left">
+          <span className="text-center text-xl font-extrabold uppercase text-blue-800 md:text-left">
             História
           </span>
         </div>
-        <span className="text-blue-950 md:tracking-wide text-justify hidden md:block w-1/3">
+        <span className="hidden w-1/3 text-justify text-blue-950 md:block md:tracking-wide">
           Há 12 anos presente em diversas obras de extrema importância para o mercado nacional, atuando em diferentes setores. Nosso foco é na excelência em todos os processos do atendimento, buscando a pontualidade no cronograma e na execução dos serviços.
         </span>
-        <div className="flex flex-row justify-center md:justify-end py-4">
+        <div className="flex flex-row justify-center py-4 md:justify-end">
           <Drawer>
             <DrawerTrigger asChild>
-              <Button variant="link" className="text-neutral-400 text-md animate-pulse font-light tracking-tighter underline">
+              <Button variant="link" className="text-md animate-pulse font-light tracking-tighter text-neutral-400 underline">
                 Ler artigo completo
               </Button>
             </DrawerTrigger>
             <DrawerContent>
-              <div className="mx-auto w-full md:mx-none">
+              <div className="md:mx-none mx-auto w-full">
                 <DrawerHeader>
                   <DrawerTitle>
                     <span className="md:hidden">Sobre a Multimol</span>
@@ -183,18 +183,18 @@ export default function Home() {
 
       <div
         id="services"
-        className="px-5 py-2 w-full max-w-screen flex flex-col gap-8 -mb-2 md:items-center"
+        className="max-w-screen -mb-2 flex w-full flex-col gap-8 px-5 py-2 md:items-center"
       >
-        <div className="flex flex-col md:flex-row border-t-2 border-neutral-100 p-2 md:p-4 md:gap-2 md:w-1/2 md:min-w-2/5 md:justify-center">
-          <span className="text-gray-950 text-xl font-light uppercase text-center">
+        <div className="md:min-w-2/5 flex flex-col border-t-2 border-neutral-100 p-2 md:w-1/2 md:flex-row md:justify-center md:gap-2 md:p-4">
+          <span className="text-center text-xl font-light uppercase text-gray-950">
             Serviços e
           </span>
-          <span className="text-blue-800 text-xl font-extrabold uppercase text-center">
+          <span className="text-center text-xl font-extrabold uppercase text-blue-800">
             Procedimentos
           </span>
         </div>
-        <span className="text-neutral-400 w-full items-center justify-center font-light text-center tracking-tighter">Alguns dos nossos serviços:</span>
-        <div className="flex flex-col md:flex-row gap-8 w-full items-center justify-center">
+        <span className="w-full items-center justify-center text-center font-light tracking-tighter text-neutral-400">Alguns dos nossos serviços:</span>
+        <div className="flex w-full flex-col items-center justify-center gap-8 md:flex-row">
           <div className="flex flex-col">
             <span className="text-lg font-semibold tracking-tighter text-blue-800">Tratamento de concreto pré-moldados:</span>
             <span className="font-light tracking-tighter text-blue-950">• Equalização de lajes alveolares e pontiamento</span>
@@ -212,50 +212,50 @@ export default function Home() {
             <span className="font-light tracking-tighter text-blue-950">• Vedação &quot;com estética&quot; com selante comum e firestop</span>
           </div>
         </div>
-        <div className="items-center w-full justify-center flex flex-row md:py-20 -px-5">
-          <div className="w-full grid grid-cols-1 md:grid-cols-4">
+        <div className="-px-5 flex w-full flex-row items-center justify-center md:py-20">
+          <div className="grid w-full grid-cols-1 md:grid-cols-4">
             {progressPics.map((image, index) => (
-              <Image key={index} src={image.src} alt={image.alt} className="object-cover h-full w-full rounded-2xl p-2" />
+              <Image key={index} src={image.src} alt={image.alt} className="size-full rounded-2xl object-cover p-2" />
             ))}
           </div>
         </div>
       </div>
 
-      <div className="hidden md:block w-full">
+      <div className="hidden w-full md:block">
         <div
           id="clientsDesktop"
-          className="px-5 py-12 w-full max-w-screen flex flex-col gap-4 rounded-t-2xl md:items-center"
+          className="max-w-screen flex w-full flex-col gap-4 rounded-t-2xl px-5 py-12 md:items-center"
         >
-          <div className="flex flex-col border-t-2 border-neutral-100 md:flex-row p-2 md:p-4 gap-4 md:gap-2 md:w-1/2 md:min-w-2/5 md:justify-center">
-            <span className="text-blue-950 text-xl font-light uppercase text-left">
+          <div className="md:min-w-2/5 flex flex-col gap-4 border-t-2 border-neutral-100 p-2 md:w-1/2 md:flex-row md:justify-center md:gap-2 md:p-4">
+            <span className="text-left text-xl font-light uppercase text-blue-950">
               Clientes e
             </span>
-            <span className="text-blue-800 text-xl font-extrabold uppercase text-left">
+            <span className="text-left text-xl font-extrabold uppercase text-blue-800">
               Parceiros
             </span>
           </div>
-          <div className="py-6 grid gap-12 grid-cols-4">
-            <Image src={racionalIcon} alt="racional" width={80} className="invert grayscale contrast-50" />
-            <Image src={montoIcon} alt="monto" width={100} className="invert grayscale contrast-50" />
-            <Image src={leonardiIcon} alt="leonardi" width={120} className="invert grayscale contrast-50" />
-            <Image src={mpdIcon} alt="mpd" width={120} className="invert grayscale contrast-50" />
-            <Image src={afonsofrancaIcon} alt="afonsofranca" width={120} className="invert grayscale contrast-50" />
-            <Image src={matecIcon} alt="matec" width={120} className="invert grayscale contrast-50" />
-            <Image src={ribeirocaramIcon} alt="ribeirocaram" width={90} className="invert grayscale contrast-50" />
-            <Image src={teaIcon} alt="tea" width={60} className="invert grayscale contrast-50" />
+          <div className="grid grid-cols-4 gap-12 py-6">
+            <Image src={racionalIcon} alt="racional" width={80} className="contrast-50 grayscale invert" />
+            <Image src={montoIcon} alt="monto" width={100} className="contrast-50 grayscale invert" />
+            <Image src={leonardiIcon} alt="leonardi" width={120} className="contrast-50 grayscale invert" />
+            <Image src={mpdIcon} alt="mpd" width={120} className="contrast-50 grayscale invert" />
+            <Image src={afonsofrancaIcon} alt="afonsofranca" width={120} className="contrast-50 grayscale invert" />
+            <Image src={matecIcon} alt="matec" width={120} className="contrast-50 grayscale invert" />
+            <Image src={ribeirocaramIcon} alt="ribeirocaram" width={90} className="contrast-50 grayscale invert" />
+            <Image src={teaIcon} alt="tea" width={60} className="contrast-50 grayscale invert" />
           </div>
         </div>
       </div>
 
       <div
         id="clientsMobile"
-        className="px-5 pt-12 pb-20  w-full max-w-screen flex flex-col gap-4 md:hidden rounded-t-2xl"
+        className="max-w-screen flex w-full  flex-col gap-4 rounded-t-2xl px-5 pb-20 pt-12 md:hidden"
       >
-        <div className="flex flex-col border-t-2 border-neutral-100 p-2 md:p-4 gap-4">
-          <span className="text-blue-950 text-xl font-light uppercase text-center">
+        <div className="flex flex-col gap-4 border-t-2 border-neutral-100 p-2 md:p-4">
+          <span className="text-center text-xl font-light uppercase text-blue-950">
             Clientes e
           </span>
-          <span className="text-blue-800 text-xl font-extrabold uppercase text-center -mt-5">
+          <span className="-mt-5 text-center text-xl font-extrabold uppercase text-blue-800">
             Parceiros
           </span>
         </div>
@@ -264,54 +264,54 @@ export default function Home() {
 
       <div
         id="feedbacks"
-        className="px-5 py-12 bg-white w-full max-w-screen flex flex-col gap-8 rounded-t-2xl -mt-5 md:items-center"
+        className="max-w-screen -mt-5 flex w-full flex-col gap-8 rounded-t-2xl bg-white px-5 py-12 md:items-center"
       >
-        <div className="flex flex-col md:flex-row md:gap-2 border-t-2 border-neutral-100 p-2 md:p-4 md:w-1/2 md:min-w-2/5 md:justify-center">
-          <span className="text-gray-950 text-xl font-light uppercase text-center  md:text-left">
+        <div className="md:min-w-2/5 flex flex-col border-t-2 border-neutral-100 p-2 md:w-1/2 md:flex-row md:justify-center md:gap-2 md:p-4">
+          <span className="text-center text-xl font-light uppercase text-gray-950  md:text-left">
             Avaliações
           </span>
-          <span className="text-blue-800 text-xl font-extrabold uppercase text-center  md:text-left">
+          <span className="text-center text-xl font-extrabold uppercase text-blue-800  md:text-left">
             Dos clientes
           </span>
         </div>
-        <div className="items-center justify-center grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 items-center justify-center gap-2 md:grid-cols-3 lg:grid-cols-4">
           <Card className="max-w-[300px] shadow-2xl">
             <CardContent className="pt-5">
-              <span className="italic text-sm text-justify tracking-tighter">
+              <span className="text-justify text-sm italic tracking-tighter">
                 &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
               </span>
             </CardContent>
-            <CardFooter className="text-xs md:text-md">
+            <CardFooter className="md:text-md text-xs">
               Marcos Oliveira
             </CardFooter>
           </Card>
           <Card className="max-w-[300px] shadow-2xl">
             <CardContent className="pt-5">
-              <span className="italic text-sm text-justify tracking-tighter">
+              <span className="text-justify text-sm italic tracking-tighter">
                 &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
               </span>
             </CardContent>
-            <CardFooter className="text-xs md:text-md">
+            <CardFooter className="md:text-md text-xs">
               Marcos Oliveira
             </CardFooter>
           </Card>
           <Card className="max-w-[300px] shadow-2xl">
             <CardContent className="pt-5">
-              <span className="italic text-sm text-justify tracking-tighter">
+              <span className="text-justify text-sm italic tracking-tighter">
                 &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
               </span>
             </CardContent>
-            <CardFooter className="text-xs md:text-md">
+            <CardFooter className="md:text-md text-xs">
               Marcos Oliveira
             </CardFooter>
           </Card>
           <Card className="max-w-[300px] shadow-2xl">
             <CardContent className="pt-5">
-              <span className="italic text-sm text-justify tracking-tighter">
+              <span className="text-justify text-sm italic tracking-tighter">
                 &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
               </span>
             </CardContent>
-            <CardFooter className="text-xs md:text-md">
+            <CardFooter className="md:text-md text-xs">
               Marcos Oliveira
             </CardFooter>
           </Card>
