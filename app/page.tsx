@@ -129,7 +129,7 @@ export default function Home() {
         <CarouselContent>
           {[acheRecPic, arenaMrvPic, tietePlazaPic, cidadeJardimPic].map((image, index) => (
             <CarouselItem key={index}>
-              <Image src={image} alt={`banner ${index + 1}`} />
+              <Image src={image} alt={`banner ${index + 1}`} className="object-cover h-full w-full" />
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -209,7 +209,7 @@ export default function Home() {
             <span className="font-light tracking-tighter text-blue-950">• Ajuste e/ou alinhamento</span>
             <span className="font-light tracking-tighter text-blue-950">• Fechamentos</span>
             <span className="font-light tracking-tighter text-blue-950">• Impermeabilização</span>
-            <span className="font-light tracking-tighter text-blue-950">• Vedação "com estética" com selante comum e firestop</span>
+            <span className="font-light tracking-tighter text-blue-950">• Vedação &quot;com estética&quot; com selante comum e firestop</span>
           </div>
         </div>
         <div className="items-center w-full justify-center flex flex-row md:py-20 -px-5">
