@@ -95,7 +95,7 @@ export default function Home() {
   ]
 
   return (
-    <div className="flex h-full w-full max-w-screen flex-col items-center justify-between overscroll-y-none pt-[70px] md:pt-16">
+    <div className="flex h-full w-full max-w-screen flex-col items-center justify-between overscroll-y-none pt-[60px] md:pt-16">
 
       <Button
         className="rounded-full py-8 bg-green-600 fixed z-40 bottom-5 right-5 text-4xl hover:bg-green-800 animate-bounce"
@@ -137,7 +137,7 @@ export default function Home() {
 
       <div
         id="about"
-        className="p-5 bg-white border-t-4 border-neutral-100 max-w-screen flex md:gap-4 w-full justify-between flex-col rounded-t-2xl -mt-4  z-10 md:items-center"
+        className="p-5 bg-white border-t-4 border-neutral-100 max-w-screen flex md:gap-4 w-full justify-between flex-col rounded-t-2xl -mt-3 z-10 md:items-center"
       >
         <div className="flex flex-col md:flex-row md:gap-2 md:pt-6 md:p-0 items-center">
           <div className="h-2 bg-neutral-100 w-1/3 mb-5 rounded-full flex flex-row"></div>
