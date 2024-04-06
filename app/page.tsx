@@ -3,7 +3,7 @@ import * as React from "react";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Button } from "@/components/ui/button";
 import {
@@ -20,7 +20,6 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
@@ -30,11 +29,17 @@ import {
 import HeaderComponent from "./modules/header";
 import FooterComponent from "./modules/footer";
 
-import imageOne from "./assets/images/banner/ache_rec.jpeg"
-import imageTwo from "./assets/images/banner/arena_mrv.jpeg"
-import imageThree from "./assets/images/banner/tiete_plaza.jpeg"
-import imageFour from "./assets/images/banner/cidade_jardim.jpeg"
-import banner from "./assets/images/partners/arenamrv.jpeg"
+import acheRecPic from "./assets/images/banner/ache_rec.jpeg";
+import arenaMrvPic from "./assets/images/banner/arena_mrv.jpeg";
+import cdLeroyPic from "./assets/images/banner/cd_leroy.jpeg";
+import cidadeJardimPic from "./assets/images/banner/cidade_jardim.jpeg";
+import dvrBpPic from "./assets/images/banner/dvr_bp.jpeg";
+import gnFortalPic from "./assets/images/banner/gn_fortal.jpeg";
+import jkIguatemiPic from "./assets/images/banner/jk_iguatemi.jpeg";
+import shopBandeiraPic from "./assets/images/banner/shop_bandeira.jpeg";
+import shopUniaoPic from "./assets/images/banner/shop_uniao.jpeg";
+import tietePlazaPic from "./assets/images/banner/tiete_plaza.jpeg";
+
 
 import racionalIcon from "./assets/images/partners/racional.svg"
 import mpdIcon from "./assets/images/partners/mpd.svg"
@@ -66,11 +71,25 @@ export default function Home() {
     </div>
   );
 
-  return (
-    <div className="flex h-full w-full max-w-screen flex-col items-center justify-between overscroll-y-none">
+  const constructionPics = [
+    { src: acheRecPic, alt: 'Ache Rec' },
+    { src: arenaMrvPic, alt: 'Arena MRV' },
+    { src: cdLeroyPic, alt: 'CD Leroy' },
+    { src: cidadeJardimPic, alt: 'Cidade Jardim' },
+    { src: dvrBpPic, alt: 'DVR BP' },
+    { src: gnFortalPic, alt: 'GN Fortal' },
+    { src: jkIguatemiPic, alt: 'JK Iguatemi' },
+    { src: shopBandeiraPic, alt: 'Shop Bandeira' },
+    { src: shopUniaoPic, alt: 'Shop União' },
+    { src: tietePlazaPic, alt: 'Tietê Plaza' }
+  ];
 
-      <Button 
-        className="rounded-full py-8 bg-green-600 fixed z-40 bottom-5 right-5 text-4xl hover:bg-green-800 animate-bounce" 
+
+  return (
+    <div className="flex h-full w-full max-w-screen flex-col items-center justify-between overscroll-y-none pt-16 md:pt-16">
+
+      <Button
+        className="rounded-full py-8 bg-green-600 fixed z-40 bottom-5 right-5 text-4xl hover:bg-green-800 animate-bounce"
         onClick={() => window.location.href = 'https://api.whatsapp.com/send?phone=5511981419676&text=Ol%C3%A1%2C%20desejo%20conhecer%20melhor%20os%20servi%C3%A7os%20da%20Multimol'}
       >
         <FontAwesomeIcon icon={faWhatsapp} />
@@ -78,11 +97,13 @@ export default function Home() {
 
       <HeaderComponent />
 
-      <Image
-        src={banner}
-        alt="banner"
-        className="hidden w-full object-cover h-[180px] md:block filter brightness-50"
-      />
+      <div id="mosaic" className="hidden md:block">
+        <div className="w-full grid grid-cols-5">
+          {constructionPics.map((image, index) => (
+            <Image key={index} src={image.src} alt={image.alt} className="object-cover h-full w-full" />
+          ))}
+        </div>
+      </div>
 
       <Carousel
         plugins={[
@@ -97,9 +118,9 @@ export default function Home() {
         className="w-full max-w-screen md:hidden"
       >
         <CarouselContent>
-          {[imageOne, imageTwo, imageThree, imageFour].map((image, index) => (
+          {[acheRecPic, arenaMrvPic, tietePlazaPic, cidadeJardimPic].map((image, index) => (
             <CarouselItem key={index}>
-              <Image src={image} alt={`banner ${index + 1}`} className="filter brightness-50" />
+              <Image src={image} alt={`banner ${index + 1}`} />
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -107,30 +128,26 @@ export default function Home() {
 
       <div
         id="about"
-        className="px-5 pt-6 pb-4 shadow-neutral-900 md:py-5 bg-gray-900 max-w-screen flex md:gap-4 w-full justify-between flex-col rounded-t-2xl rounded-b-2xl -mt-28 md:-mt-6 z-10 shadow-2xl md:items-center"
+        className="px-5 pt-6 pb-4 md:py-5 bg-white border-t-4 border-neutral-100 max-w-screen flex md:gap-4 w-full justify-between flex-col rounded-t-2xl -mt-20 md:-mt-6 z-10 md:items-center"
       >
-        <div className="flex flex-col md:flex-row md:gap-2 p-2 md:pt-6 md:p-0">
-          <span className="text-white text-xl font-light uppercase text-center md:text-left">
+        <div className="flex flex-col md:flex-row md:gap-2 md:pt-6 md:p-0 items-center">
+          <div className="h-2 bg-neutral-100 w-1/3 mb-5 rounded-full"></div>
+          <span className="text-blue-950 text-xl font-light uppercase text-center md:text-left">
             Nossa
           </span>
-          <span className="text-blue-500 text-xl font-extrabold uppercase text-center md:text-left">
+          <span className="text-blue-800 text-xl font-extrabold uppercase text-center md:text-left">
             História
           </span>
         </div>
-        <span className="text-blue-200 md:tracking-wide text-justify hidden md:block w-1/3">
+        <span className="text-blue-950 md:tracking-wide text-justify hidden md:block w-1/3">
           Há 12 anos presente em diversas obras de extrema importância para o mercado nacional, atuando em diferentes setores. Nosso foco é na excelência em todos os processos do atendimento, buscando a pontualidade no cronograma e na execução dos serviços.
         </span>
         <div className="flex flex-row justify-center md:justify-end">
           <Drawer>
             <DrawerTrigger asChild>
-              <div>
-                <Button variant="ghost" className="md:hidden text-white text-xl animate-pulse">
-                  <FontAwesomeIcon icon={faChevronDown} />
-                </Button>
-                <Button variant="link" className="hidden md:block text-white text-md">
-                  Ver mais
-                </Button>
-              </div>
+              <Button variant="link" className="text-neutral-400 text-md animate-pulse">
+                Ler artigo completo
+              </Button>
             </DrawerTrigger>
             <DrawerContent>
               <div className="mx-auto w-full md:mx-none">
@@ -146,7 +163,7 @@ export default function Home() {
                 </div>
                 <DrawerFooter className="items-center">
                   <DrawerClose asChild>
-                    <Button variant="outline">Fechar</Button>
+                    <Button variant="outline" className="w-full">Fechar</Button>
                   </DrawerClose>
                 </DrawerFooter>
               </div>
@@ -159,11 +176,11 @@ export default function Home() {
         id="services"
         className="px-5 py-12 w-full max-w-screen flex flex-col gap-8 -mb-2 md:items-center"
       >
-        <div className="flex flex-col md:flex-row border-2 border-neutral-200 rounded-2xl p-2 md:p-4 md:gap-2 shadow-2xl md:w-1/2 md:min-w-2/5 md:justify-center">
+        <div className="flex flex-col md:flex-row border-t-2 border-neutral-100 p-2 md:p-4 md:gap-2 md:w-1/2 md:min-w-2/5 md:justify-center">
           <span className="text-gray-950 text-xl font-light uppercase text-center">
             Serviços e
           </span>
-          <span className="text-blue-500 text-xl font-extrabold uppercase text-center">
+          <span className="text-blue-800 text-xl font-extrabold uppercase text-center">
             Procedimentos
           </span>
         </div>
@@ -171,42 +188,42 @@ export default function Home() {
           <ResizableDemo />
         </div>
       </div>
-      
+
       <div className="hidden md:block w-full">
         <div
           id="clientsDesktop"
-          className="px-5 py-12 bg-gray-900 w-full max-w-screen flex flex-col gap-4 rounded-t-2xl md:items-center"
+          className="px-5 py-12 w-full max-w-screen flex flex-col gap-4 rounded-t-2xl md:items-center"
         >
-          <div className="flex flex-col md:flex-row bg-gray-800 rounded-2xl p-2 md:p-4 gap-4 md:gap-2 shadow-2xl md:w-1/2 md:min-w-2/5 md:justify-center">
-            <span className="text-white text-xl font-light uppercase text-left">
+          <div className="flex flex-col border-t-2 border-neutral-100 md:flex-row p-2 md:p-4 gap-4 md:gap-2 md:w-1/2 md:min-w-2/5 md:justify-center">
+            <span className="text-blue-950 text-xl font-light uppercase text-left">
               Clientes e
             </span>
-            <span className="text-blue-500 text-xl font-extrabold uppercase text-left">
+            <span className="text-blue-800 text-xl font-extrabold uppercase text-left">
               Parceiros
             </span>
           </div>
           <div className="py-6 grid gap-12 grid-cols-4">
-            <Image src={racionalIcon} alt="racional" width={80} />
-            <Image src={montoIcon} alt="monto" width={100} />
-            <Image src={leonardiIcon} alt="leonardi" width={120} />
-            <Image src={mpdIcon} alt="mpd" width={120} />
-            <Image src={afonsofrancaIcon} alt="afonsofranca" width={120} />
-            <Image src={matecIcon} alt="matec" width={120} />
-            <Image src={ribeirocaramIcon} alt="ribeirocaram" width={90} className="filter brightness-150" />
-            <Image src={teaIcon} alt="tea" width={60} className="contrast-0" />
+            <Image src={racionalIcon} alt="racional" width={80} className="invert grayscale contrast-50" />
+            <Image src={montoIcon} alt="monto" width={100} className="invert grayscale contrast-50" />
+            <Image src={leonardiIcon} alt="leonardi" width={120} className="invert grayscale contrast-50" />
+            <Image src={mpdIcon} alt="mpd" width={120} className="invert grayscale contrast-50" />
+            <Image src={afonsofrancaIcon} alt="afonsofranca" width={120} className="invert grayscale contrast-50" />
+            <Image src={matecIcon} alt="matec" width={120} className="invert grayscale contrast-50" />
+            <Image src={ribeirocaramIcon} alt="ribeirocaram" width={90} className="invert grayscale contrast-50" />
+            <Image src={teaIcon} alt="tea" width={60} className="invert grayscale contrast-50" />
           </div>
         </div>
       </div>
 
       <div
         id="clientsMobile"
-        className="px-5 pt-12 pb-20 bg-gray-900 w-full max-w-screen flex flex-col gap-4 md:hidden rounded-t-2xl"
+        className="px-5 pt-12 pb-20  w-full max-w-screen flex flex-col gap-4 md:hidden rounded-t-2xl"
       >
-        <div className="flex flex-col bg-gray-800 rounded-2xl p-2 md:p-4 gap-4 shadow-2xl">
-          <span className="text-white text-xl font-light uppercase text-center">
+        <div className="flex flex-col border-t-2 border-neutral-100 p-2 md:p-4 gap-4">
+          <span className="text-blue-950 text-xl font-light uppercase text-center">
             Clientes e
           </span>
-          <span className="text-blue-500 text-xl font-extrabold uppercase text-center -mt-5">
+          <span className="text-blue-800 text-xl font-extrabold uppercase text-center -mt-5">
             Parceiros
           </span>
         </div>
@@ -217,11 +234,11 @@ export default function Home() {
         id="feedbacks"
         className="px-5 py-12 bg-white w-full max-w-screen flex flex-col gap-8 rounded-t-2xl -mt-5 md:items-center"
       >
-        <div className="flex flex-col md:flex-row md:gap-2 border-2 border-neutral-200 rounded-2xl p-2 md:p-4 shadow-2xl md:w-1/2 md:min-w-2/5 md:justify-center">
+        <div className="flex flex-col md:flex-row md:gap-2 border-t-2 border-neutral-100 p-2 md:p-4 md:w-1/2 md:min-w-2/5 md:justify-center">
           <span className="text-gray-950 text-xl font-light uppercase text-center  md:text-left">
             Avaliações
           </span>
-          <span className="text-blue-500 text-xl font-extrabold uppercase text-center  md:text-left">
+          <span className="text-blue-800 text-xl font-extrabold uppercase text-center  md:text-left">
             Dos clientes
           </span>
         </div>

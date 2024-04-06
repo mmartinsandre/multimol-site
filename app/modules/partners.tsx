@@ -49,7 +49,7 @@ const Slider = () => {
                 {duplicatedSlides.map((slide, index) => (
                     <div key={index} className="flex-shrink-0" style={{ width: `${380 / slides.length}%` }}>
                         <div className="flex flex-col items-center justify-center h-full mx-6">
-                            <Image src={slide} alt={`partner-${index}`} />
+                        <Image src={slide} alt={`partner-${index}`} className="invert grayscale contrast-50" />
                         </div>
                     </div>
                 ))}

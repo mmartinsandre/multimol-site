@@ -1,28 +1,16 @@
 'use client'
 import React from "react";
 import Image from "next/image";
-import logoIcon from "../assets/images/non_slogan_white_logo.png"
-
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-  } from "@/components/ui/dropdown-menu";
-import { Button } from  "@/components/ui/button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-
+import logoIcon from "../assets/images/app_logo.png"
+import letteringIcon from "../assets/images/lettering.png"
 
 const HeaderComponent = () => {
   return (
-      <div className="w-full max-w-screen max-h-[100px] px-1 md:px-6 flex justify-between items-center bg-transparent absolute top-0 z-20 gradient-radial">
-        <div className="w-full items-center justify-center flex">
-          <Image src={logoIcon} alt="logo" width={160} className="filter brightness-200" />
+      <div className="w-full max-w-screen h-[80px] md:h-[90px] px-1 md:px-6 flex justify-between items-center bg-transparent absolute top-0 z-20 gradient-radial bg-white rounded-b-2xl border-b-4 border-neutral-100">
+        <div className="w-full items-center justify-start flex -space-x-5 md:-space-x-6">
+          <Image src={logoIcon} alt="logo" className="w-[80px] md:w-[90px]" />
+          <Image src={letteringIcon} alt="desc" className="object-cover h-20 w-48" />
         </div>
-
       </div>
   );
 };

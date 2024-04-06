@@ -2,27 +2,20 @@
 import React from "react";
 import Image from "next/image";
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-
-import logoIcon from "../assets/images/non_slogan_logo.png"
 
 const FooterComponent = () => {
     return (
         <div className="relative bottom-0 w-full">
             <div className="flex flex-col md:flex-row w-full">
 
-                <div className="flex flex-col w-full p-5 bg-gray-900 rounded-t-2xl shadow-2xl md:items-center">
-                    <div className="flex flex-col md:flex-row md:gap-2 bg-gray-800 rounded-2xl p-2 md:p-4 shadow-2xl md:w-1/2 md:min-w-2/5 md:justify-center mt-8">
+                <div className="flex flex-col w-full p-5 bg-blue-950 rounded-t-2xl shadow-2xl md:items-center">
+                    <div className="flex flex-col md:flex-row md:gap-2 bg-blue-900 rounded-2xl p-2 md:p-4 shadow-2xl md:w-1/2 md:min-w-2/5 md:justify-center mt-8">
                         <span className="text-white text-xl font-light uppercase text-center">
                             Entre
                         </span>
-                        <span className="text-blue-500 text-xl font-extrabold uppercase text-center">
+                        <span className="text-blue-300 text-xl font-extrabold uppercase text-center">
                             Em contato
                         </span>
                     </div>
@@ -46,7 +39,6 @@ const FooterComponent = () => {
                 id="footer"
                 className="-mt-3 px-2 py-6 w-full max-w-screen flex flex-col gap-8 items-center"
             >
-                <Image src={logoIcon} alt="multimol" width={130} className="-mb-20 -mt-11" />
                 <span className="text-black text-xs text-center font-light">
                     2024 - Todos os direitos reservados - Multimol Construçes
                 </span>
