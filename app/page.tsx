@@ -212,7 +212,7 @@ export default function Home() {
             <span className="font-light tracking-tighter text-blue-950">• Vedação "com estética" com selante comum e firestop</span>
           </div>
         </div>
-        <div className="items-center w-full justify-center flex flex-row py-24 -px-5">
+        <div className="items-center w-full justify-center flex flex-row md:py-20 -px-5">
           <div className="w-full grid grid-cols-1 md:grid-cols-4">
             {progressPics.map((image, index) => (
               <Image key={index} src={image.src} alt={image.alt} className="object-cover h-full w-full rounded-2xl p-2" />
