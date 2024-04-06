@@ -1,10 +1,12 @@
 'use client'
-import * as React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import Autoplay from "embla-carousel-autoplay"
+import Autoplay from "embla-carousel-autoplay";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import Slider from "./modules/partners";
+import HeaderComponent from "./modules/header";
+import FooterComponent from "./modules/footer";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -15,7 +17,7 @@ import {
   Card,
   CardContent,
   CardFooter,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   Drawer,
   DrawerClose,
@@ -24,10 +26,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer"
-
-import HeaderComponent from "./modules/header";
-import FooterComponent from "./modules/footer";
+} from "@/components/ui/drawer";
 
 import acheRecPic from "./assets/images/banner/ache_rec.jpeg";
 import arenaMrvPic from "./assets/images/banner/arena_mrv.jpeg";
@@ -53,7 +52,6 @@ import leonardiIcon from "./assets/images/partners/leonardi.png";
 import afonsofrancaIcon from "./assets/images/partners/afonsofranca.png";
 import matecIcon from "./assets/images/partners/matec.png";
 import ribeirocaramIcon from "./assets/images/partners/ribeirocaram.png";
-import Slider from "./modules/partners";
 
 export default function Home() {
 
@@ -93,6 +91,14 @@ export default function Home() {
     { src: workThreePic, alt: 'work' },
     { src: workFourPic, alt: 'work' }
   ]
+
+  const [showAllImages, setShowAllImages] = useState(false);
+  const showImageCount = showAllImages ? progressPics.length : 2;
+
+  const handleShowMoreImages = () => {
+    setShowAllImages(true);
+  };
+
 
   return (
     <div className="max-w-screen flex size-full flex-col items-center justify-between overscroll-y-none pt-[60px] md:pt-16">
@@ -212,13 +218,27 @@ export default function Home() {
             <span className="font-light tracking-tighter text-blue-950">• Vedação &quot;com estética&quot; com selante comum e firestop</span>
           </div>
         </div>
-        <div className="-px-5 flex w-full flex-row items-center justify-center md:py-20">
+        <div className="flex w-full flex-row items-center justify-center md:hidden">
           <div className="grid w-full grid-cols-1 md:grid-cols-4">
+            {progressPics.slice(0, showImageCount).map((image, index) => (
+              <Image key={index} src={image.src} alt={image.alt} className="size-full rounded-2xl object-cover p-2" />
+            ))}
+          </div>
+        </div>
+        <div className="hidden md:block">
+          <div className="grid w-full grid-cols-1 items-center justify-center py-20 md:grid-cols-4">
             {progressPics.map((image, index) => (
               <Image key={index} src={image.src} alt={image.alt} className="size-full rounded-2xl object-cover p-2" />
             ))}
           </div>
         </div>
+        {!showAllImages && (
+          <div className="flex justify-center md:hidden">
+            <Button onClick={handleShowMoreImages} variant="link" className="underline">
+              Ver mais
+            </Button>
+          </div>
+        )}
       </div>
 
       <div className="hidden w-full md:block">
