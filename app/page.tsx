@@ -40,19 +40,19 @@ import shopBandeiraPic from "./assets/images/banner/shop_bandeira.jpeg";
 import shopUniaoPic from "./assets/images/banner/shop_uniao.jpeg";
 import tietePlazaPic from "./assets/images/banner/tiete_plaza.jpeg";
 
-import workOnePic from "./assets/images/progress/workone.jpg"
-import workTwoPic from "./assets/images/progress/worktwo.jpg"
-import workThreePic from "./assets/images/progress/workthree.jpg"
-import workFourPic from "./assets/images/progress/workfour.jpg"
+import workOnePic from "./assets/images/progress/workone.jpeg";
+import workTwoPic from "./assets/images/progress/worktwo.jpeg";
+import workThreePic from "./assets/images/progress/workthree.jpeg";
+import workFourPic from "./assets/images/progress/workfour.jpeg";
 
-import racionalIcon from "./assets/images/partners/racional.svg"
-import mpdIcon from "./assets/images/partners/mpd.svg"
-import teaIcon from "./assets/images/partners/tea.svg"
-import montoIcon from "./assets/images/partners/monto.png"
-import leonardiIcon from "./assets/images/partners/leonardi.png"
-import afonsofrancaIcon from "./assets/images/partners/afonsofranca.png"
-import matecIcon from "./assets/images/partners/matec.png"
-import ribeirocaramIcon from "./assets/images/partners/ribeirocaram.png"
+import racionalIcon from "./assets/images/partners/racional.svg";
+import mpdIcon from "./assets/images/partners/mpd.svg";
+import teaIcon from "./assets/images/partners/tea.svg";
+import montoIcon from "./assets/images/partners/monto.png";
+import leonardiIcon from "./assets/images/partners/leonardi.png";
+import afonsofrancaIcon from "./assets/images/partners/afonsofranca.png";
+import matecIcon from "./assets/images/partners/matec.png";
+import ribeirocaramIcon from "./assets/images/partners/ribeirocaram.png";
 import Slider from "./modules/partners";
 
 export default function Home() {
