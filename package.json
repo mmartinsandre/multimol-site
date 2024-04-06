@@ -37,6 +37,7 @@
     "sharp": "^0.33.3",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
+    "url": "^0.11.3",
     "vaul": "^0.9.0",
     "zod": "^3.22.4"
   },
