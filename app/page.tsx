@@ -52,6 +52,7 @@ import leonardiIcon from "./assets/images/partners/leonardi.png";
 import afonsofrancaIcon from "./assets/images/partners/afonsofranca.png";
 import matecIcon from "./assets/images/partners/matec.png";
 import ribeirocaramIcon from "./assets/images/partners/ribeirocaram.png";
+import { Skeleton } from "./components/ui/skeleton";
 
 export default function Home() {
 
@@ -294,46 +295,50 @@ export default function Home() {
             Dos clientes
           </span>
         </div>
-        <div className="grid grid-cols-2 items-center justify-center gap-2 md:grid-cols-3 lg:grid-cols-4">
-          <Card className="max-w-[300px] shadow-2xl">
+        <div className="grid grid-cols-1 items-center justify-center gap-2 md:grid-cols-3 lg:grid-cols-4">
+          <Card className="max-w-[400px] min-h-[120px] shadow-2xl">
             <CardContent className="pt-5">
-              <span className="text-justify text-sm italic tracking-tighter">
-                &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
-              </span>
+              <div className="flex items-center space-x-4">
+                <Skeleton className="h-12 w-12 rounded-full" />
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-[150px]" />
+                  <Skeleton className="h-4 w-[100px]" />
+                </div>
+              </div>
             </CardContent>
-            <CardFooter className="md:text-md text-xs">
-              Marcos Oliveira
-            </CardFooter>
           </Card>
-          <Card className="max-w-[300px] shadow-2xl">
+          <Card className="max-w-[400px] min-h-[120px] shadow-2xl">
             <CardContent className="pt-5">
-              <span className="text-justify text-sm italic tracking-tighter">
-                &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
-              </span>
+              <div className="flex items-center space-x-4">
+                <Skeleton className="h-12 w-12 rounded-full" />
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-[150px]" />
+                  <Skeleton className="h-4 w-[100px]" />
+                </div>
+              </div>
             </CardContent>
-            <CardFooter className="md:text-md text-xs">
-              Marcos Oliveira
-            </CardFooter>
           </Card>
-          <Card className="max-w-[300px] shadow-2xl">
+          <Card className="max-w-[400px] min-h-[120px] shadow-2xl">
             <CardContent className="pt-5">
-              <span className="text-justify text-sm italic tracking-tighter">
-                &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
-              </span>
+              <div className="flex items-center space-x-4">
+                <Skeleton className="h-12 w-12 rounded-full" />
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-[150px]" />
+                  <Skeleton className="h-4 w-[100px]" />
+                </div>
+              </div>
             </CardContent>
-            <CardFooter className="md:text-md text-xs">
-              Marcos Oliveira
-            </CardFooter>
           </Card>
-          <Card className="max-w-[300px] shadow-2xl">
+          <Card className="max-w-[400px] min-h-[120px] shadow-2xl">
             <CardContent className="pt-5">
-              <span className="text-justify text-sm italic tracking-tighter">
-                &quot;Adorei os serviços prestados no galpão de Maringá-PR em 2015!&quot;.
-              </span>
+              <div className="flex items-center space-x-4">
+                <Skeleton className="h-12 w-12 rounded-full" />
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-[150px]" />
+                  <Skeleton className="h-4 w-[100px]" />
+                </div>
+              </div>
             </CardContent>
-            <CardFooter className="md:text-md text-xs">
-              Marcos Oliveira
-            </CardFooter>
           </Card>
         </div>
       </div>
