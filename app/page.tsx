@@ -87,10 +87,10 @@ export default function Home() {
   ];
 
   const progressPics = [
-    { src: workOnePic, alt: 'work' },
-    { src: workTwoPic, alt: 'work' },
-    { src: workThreePic, alt: 'work' },
-    { src: workFourPic, alt: 'work' }
+    { src: workOnePic, alt: 'pintura' },
+    { src: workTwoPic, alt: 'vedação' },
+    { src: workThreePic, alt: 'calibragem' },
+    { src: workFourPic, alt: 'alinhamento' }
   ]
 
   const [showAllImages, setShowAllImages] = useState(false);
@@ -155,8 +155,8 @@ export default function Home() {
             História
           </span>
         </div>
-        <span className="hidden w-1/3 text-justify text-blue-950 md:block md:tracking-wide">
-          Há 12 anos presente em diversas obras de extrema importância para o mercado nacional, atuando em diferentes setores. Nosso foco é na excelência em todos os processos do atendimento, buscando a pontualidade no cronograma e na execução dos serviços.
+        <span className="hidden w-1/3 text-justify text-blue-950 md:block md:tracking-tighter">
+          {aboutText}
         </span>
         <div className="flex flex-row justify-center py-4 md:justify-end">
           <Drawer>
@@ -222,14 +222,20 @@ export default function Home() {
         <div className="flex w-full flex-row items-center justify-center md:hidden">
           <div className="grid w-full grid-cols-1 md:grid-cols-4">
             {progressPics.slice(0, showImageCount).map((image, index) => (
-              <Image key={index} src={image.src} alt={image.alt} className="size-full rounded-2xl object-cover p-2" />
+              <div className="flex flex-col items-center justify-center w-full p-2">
+                <Image key={index} src={image.src} alt={image.alt} className="size-full rounded-t-2xl object-cover" />
+                <span className="font-light text-sm uppercase bg-neutral-100 border-2 border-neutral-200 rounded-b-2xl w-full text-center p-2 shadow-2xl">{image.alt}</span>
+              </div>
             ))}
           </div>
         </div>
         <div className="hidden md:block">
           <div className="grid w-full grid-cols-1 items-center justify-center py-20 md:grid-cols-4">
             {progressPics.map((image, index) => (
-              <Image key={index} src={image.src} alt={image.alt} className="size-full rounded-2xl object-cover p-2" />
+              <div className="flex flex-col items-center justify-center w-full p-2">
+                <Image key={index} src={image.src} alt={image.alt} className="size-full rounded-t-2xl object-cover" />
+                <span className="font-light text-sm uppercase bg-neutral-100 border-2 border-neutral-200 rounded-b-2xl w-full text-center p-2 shadow-2xl">{image.alt}</span>
+              </div>
             ))}
           </div>
         </div>
