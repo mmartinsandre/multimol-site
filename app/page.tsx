@@ -140,10 +140,10 @@ export default function Home() {
         <CarouselContent>
           {constructionPics.map((image, index) => (
             <CarouselItem key={index}>
-              <div className="w-full h-full z-10 absolute items-center justify-center flex">
-                <span className="text-white bg-blue-800 p-1.5 rounded-xl">{image.alt}</span>
+              <div className="absolute z-10 flex size-full items-center justify-center">
+                <span className="rounded-xl bg-blue-800 p-1.5 text-white">{image.alt}</span>
               </div>
-              <Image src={image.src} alt={`banner ${index + 1}`} className="size-full z-0 brightness-50" />
+              <Image src={image.src} alt={`banner ${index + 1}`} className="z-0 size-full brightness-50" />
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -229,9 +229,9 @@ export default function Home() {
         <div className="flex w-full flex-row items-center justify-center md:hidden">
           <div className="grid w-full grid-cols-1 md:grid-cols-4">
             {progressPics.slice(0, showImageCount).map((image, index) => (
-              <div className="flex flex-col items-center justify-center w-full p-2">
-                <Image key={index} src={image.src} alt={image.alt} className="size-full rounded-t-2xl object-cover" />
-                <span className="font-light text-sm uppercase bg-neutral-100 border-2 border-neutral-200 rounded-b-2xl w-full text-center p-2 shadow-2xl">{image.alt}</span>
+              <div key={index} className="flex w-full flex-col items-center justify-center p-2">
+                <Image src={image.src} alt={image.alt} className="size-full rounded-t-2xl object-cover" />
+                <span className="w-full rounded-b-2xl border-2 border-neutral-200 bg-neutral-100 p-2 text-center text-sm font-light uppercase shadow-2xl">{image.alt}</span>
               </div>
             ))}
           </div>
@@ -239,9 +239,9 @@ export default function Home() {
         <div className="hidden md:block">
           <div className="grid w-full grid-cols-1 items-center justify-center py-20 md:grid-cols-4">
             {progressPics.map((image, index) => (
-              <div className="flex flex-col items-center justify-center w-full p-2">
-                <Image key={index} src={image.src} alt={image.alt} className="size-full rounded-t-2xl object-cover" />
-                <span className="font-light text-sm uppercase bg-neutral-100 border-2 border-neutral-200 rounded-b-2xl w-full text-center p-2 shadow-2xl">{image.alt}</span>
+              <div key={index} className="flex w-full flex-col items-center justify-center p-2">
+                <Image src={image.src} alt={image.alt} className="size-full rounded-t-2xl object-cover" />
+                <span className="w-full rounded-b-2xl border-2 border-neutral-200 bg-neutral-100 p-2 text-center text-sm font-light uppercase shadow-2xl">{image.alt}</span>
               </div>
             ))}
           </div>
@@ -268,7 +268,7 @@ export default function Home() {
               Parceiros
             </span>
           </div>
-          <div className="grid grid-cols-4 gap-12 py-6 item-center justify-center align-baseline">
+          <div className="item-center grid grid-cols-4 justify-center gap-12 py-6 align-baseline">
             <Image src={racionalIcon} alt="racional" width={80} className="" />
             <Image src={montoIcon} alt="monto" width={120} className="" />
             <Image src={leonardiIcon} alt="leonardi" width={100} className="" />
@@ -309,10 +309,10 @@ export default function Home() {
           </span>
         </div>
         <div className="grid grid-cols-1 items-center justify-center gap-2 md:grid-cols-3 lg:grid-cols-4">
-          <Card className="max-w-[400px] min-h-[120px] shadow-2xl">
+          <Card className="min-h-[120px] max-w-[400px] shadow-2xl">
             <CardContent className="pt-5">
               <div className="flex items-center space-x-4">
-                <Skeleton className="h-12 w-12 rounded-full" />
+                <Skeleton className="size-12 rounded-full" />
                 <div className="space-y-2">
                   <Skeleton className="h-4 w-[150px]" />
                   <Skeleton className="h-4 w-[100px]" />
@@ -320,10 +320,10 @@ export default function Home() {
               </div>
             </CardContent>
           </Card>
-          <Card className="max-w-[400px] min-h-[120px] shadow-2xl">
+          <Card className="min-h-[120px] max-w-[400px] shadow-2xl">
             <CardContent className="pt-5">
               <div className="flex items-center space-x-4">
-                <Skeleton className="h-12 w-12 rounded-full" />
+                <Skeleton className="size-12 rounded-full" />
                 <div className="space-y-2">
                   <Skeleton className="h-4 w-[150px]" />
                   <Skeleton className="h-4 w-[100px]" />
@@ -331,10 +331,10 @@ export default function Home() {
               </div>
             </CardContent>
           </Card>
-          <Card className="max-w-[400px] min-h-[120px] shadow-2xl">
+          <Card className="min-h-[120px] max-w-[400px] shadow-2xl">
             <CardContent className="pt-5">
               <div className="flex items-center space-x-4">
-                <Skeleton className="h-12 w-12 rounded-full" />
+                <Skeleton className="size-12 rounded-full" />
                 <div className="space-y-2">
                   <Skeleton className="h-4 w-[150px]" />
                   <Skeleton className="h-4 w-[100px]" />
@@ -342,10 +342,10 @@ export default function Home() {
               </div>
             </CardContent>
           </Card>
-          <Card className="max-w-[400px] min-h-[120px] shadow-2xl">
+          <Card className="min-h-[120px] max-w-[400px] shadow-2xl">
             <CardContent className="pt-5">
               <div className="flex items-center space-x-4">
-                <Skeleton className="h-12 w-12 rounded-full" />
+                <Skeleton className="size-12 rounded-full" />
                 <div className="space-y-2">
                   <Skeleton className="h-4 w-[150px]" />
                   <Skeleton className="h-4 w-[100px]" />
