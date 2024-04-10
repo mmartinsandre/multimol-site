@@ -30,10 +30,12 @@ import {
 
 import acheRecPic from "./assets/images/banner/ache_rec.jpeg";
 import arenaMrvPic from "./assets/images/banner/arena_mrv.jpeg";
+import allianzPic from "./assets/images/banner/allianz.jpeg"
 import cdLeroyPic from "./assets/images/banner/cd_leroy.jpeg";
 import cidadeJardimPic from "./assets/images/banner/cidade_jardim.jpeg";
 import dvrBpPic from "./assets/images/banner/dvr_bp.jpeg";
 import gnFortalPic from "./assets/images/banner/gn_fortal.jpeg";
+import hemobrasPic from "./assets/images/banner/hemobras.jpeg"
 import jkIguatemiPic from "./assets/images/banner/jk_iguatemi.jpeg";
 import shopBandeiraPic from "./assets/images/banner/shop_bandeira.jpeg";
 import shopUniaoPic from "./assets/images/banner/shop_uniao.jpeg";
@@ -45,7 +47,7 @@ import workThreePic from "./assets/images/progress/workthree.jpeg";
 import workFourPic from "./assets/images/progress/workfour.jpeg";
 
 import racionalIcon from "./assets/images/partners/racional.svg";
-import mpdIcon from "./assets/images/partners/mpd.svg";
+import mpdIcon from "./assets/images/partners/mpd.png";
 import teaIcon from "./assets/images/partners/tea.svg";
 import montoIcon from "./assets/images/partners/monto.png";
 import leonardiIcon from "./assets/images/partners/leonardi.png";
@@ -74,16 +76,18 @@ export default function Home() {
   );
 
   const constructionPics = [
-    { src: acheRecPic, alt: 'Ache Rec' },
-    { src: arenaMrvPic, alt: 'Arena MRV' },
-    { src: cdLeroyPic, alt: 'CD Leroy' },
-    { src: cidadeJardimPic, alt: 'Cidade Jardim' },
-    { src: dvrBpPic, alt: 'DVR BP' },
-    { src: gnFortalPic, alt: 'GN Fortal' },
-    { src: jkIguatemiPic, alt: 'JK Iguatemi' },
-    { src: shopBandeiraPic, alt: 'Shop Bandeira' },
-    { src: shopUniaoPic, alt: 'Shop União' },
-    { src: tietePlazaPic, alt: 'Tietê Plaza' }
+    { src: acheRecPic, alt: 'Ache - Recife/PE' },
+    { src: arenaMrvPic, alt: 'Arena MRV - Belo Horizonte/MG' },
+    { src: allianzPic, alt: 'Allianz Parque - São Paulo/SP' },
+    { src: cdLeroyPic, alt: 'Leroy Merlin - Cajamar/SP' },
+    { src: cidadeJardimPic, alt: 'Cidade Jardim - São Paulo/SP' },
+    { src: dvrBpPic, alt: 'DVR Business - Araquari/SC' },
+    { src: gnFortalPic, alt: 'GN - Fortaleza/CE' },
+    { src: hemobrasPic, alt: 'Hemobras - Goiânia/GO' },
+    { src: jkIguatemiPic, alt: 'JK Iguatemi - São Paulo/SP' },
+    { src: shopBandeiraPic, alt: 'Shopping Bandeira - Campinas/SP' },
+    { src: shopUniaoPic, alt: 'Shopping União - Osasco/SP' },
+    { src: tietePlazaPic, alt: 'Tietê Plaza Shopping - São Paulo/SP' }
   ];
 
   const progressPics = [
@@ -114,7 +118,7 @@ export default function Home() {
       <HeaderComponent />
 
       <div id="mosaic" className="hidden md:block">
-        <div className="grid w-full grid-cols-5">
+        <div className="grid w-full grid-cols-6">
           {constructionPics.map((image, index) => (
             <Image key={index} src={image.src} alt={image.alt} className="size-full object-cover" />
           ))}
@@ -136,7 +140,10 @@ export default function Home() {
         <CarouselContent>
           {constructionPics.map((image, index) => (
             <CarouselItem key={index}>
-              <Image src={image.src} alt={`banner ${index + 1}`} className="size-full" />
+              <div className="w-full h-full z-10 absolute items-center justify-center flex">
+                <span className="text-white bg-blue-800 p-1.5 rounded-xl">{image.alt}</span>
+              </div>
+              <Image src={image.src} alt={`banner ${index + 1}`} className="size-full z-0 brightness-50" />
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -261,15 +268,15 @@ export default function Home() {
               Parceiros
             </span>
           </div>
-          <div className="grid grid-cols-4 gap-12 py-6">
-            <Image src={racionalIcon} alt="racional" width={80} className="contrast-50 grayscale invert" />
-            <Image src={montoIcon} alt="monto" width={100} className="contrast-50 grayscale invert" />
-            <Image src={leonardiIcon} alt="leonardi" width={120} className="contrast-50 grayscale invert" />
-            <Image src={mpdIcon} alt="mpd" width={120} className="contrast-50 grayscale invert" />
-            <Image src={afonsofrancaIcon} alt="afonsofranca" width={120} className="contrast-50 grayscale invert" />
-            <Image src={matecIcon} alt="matec" width={120} className="contrast-50 grayscale invert" />
-            <Image src={ribeirocaramIcon} alt="ribeirocaram" width={90} className="contrast-50 grayscale invert" />
-            <Image src={teaIcon} alt="tea" width={60} className="contrast-50 grayscale invert" />
+          <div className="grid grid-cols-4 gap-12 py-6 item-center justify-center align-baseline">
+            <Image src={racionalIcon} alt="racional" width={80} className="" />
+            <Image src={montoIcon} alt="monto" width={120} className="" />
+            <Image src={leonardiIcon} alt="leonardi" width={100} className="" />
+            <Image src={mpdIcon} alt="mpd" width={120} height={100} className="" />
+            <Image src={afonsofrancaIcon} alt="afonsofranca" width={120} className="" />
+            <Image src={matecIcon} alt="matec" width={120} className="" />
+            <Image src={ribeirocaramIcon} alt="ribeirocaram" width={90} className="" />
+            <Image src={teaIcon} alt="tea" width={60} className="" />
           </div>
         </div>
       </div>

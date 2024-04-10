@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Image from "next/image";
 
 import racionalIcon from "../assets/images/partners/racional.svg"
-import mpdIcon from "../assets/images/partners/mpd.svg"
+import mpdIcon from "../assets/images/partners/mpd.png"
 import teaIcon from "../assets/images/partners/tea.svg"
 import montoIcon from "../assets/images/partners/monto.png"
 import leonardiIcon from "../assets/images/partners/leonardi.png"
@@ -45,7 +45,7 @@ const Slider = () => {
                 {duplicatedSlides.map((slide, index) => (
                     <div key={index} className="shrink-0" style={{ width: `${400 / slides.length}%` }}>
                         <div className="mx-6 flex h-full flex-col items-center justify-center">
-                        <Image src={slide} alt={`partner-${index}`} className="contrast-50 grayscale invert" />
+                        <Image src={slide} alt={`partner-${index}`} className="" />
                         </div>
                     </div>
                 ))}
